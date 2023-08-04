@@ -1,8 +1,18 @@
-import Image from 'next/image'
-import { MainPage } from './mainPage/page'
+"use client";
+import { selectProductAmount } from "@/redux/features/cart/selector";
+import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
+import { MainContent } from "./Components/CartActionPlate";
+import { StoreRenderer } from "./Components/StoreRenderer";
+import { Header } from "./Components/Header";
+import { Story } from "./Components/Story";
 
 export default function Home() {
- return(
-  <MainPage/>
- )
+  return (
+    <div className=" ml-20 mr-20">
+      <Header/>
+      <Story/>
+      <StoreRenderer />
+    </div>
+  );
 }
