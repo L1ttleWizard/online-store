@@ -35,7 +35,7 @@ export const storyConfig = {
 export const featuredMugsConfig = [//one or two items
     {
         name:"Golden Designers Mug",
-        url:"/public/img/golden designers mug.jpg",
+        url:"img/golden designers mug.jpg",
         alt:"golden mug",
         price:200,
         onSale:false,
@@ -43,7 +43,7 @@ export const featuredMugsConfig = [//one or two items
     },
     {
         name:"Pink premium ceramic",
-        url:"/public/img/pink premium ceramic.jpg",
+        url:"img/pink premium ceramic.jpg",
         alt:"pink premium",
         price:200,
         onSale:true,
