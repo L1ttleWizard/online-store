@@ -1,5 +1,5 @@
 import React from "react";
-import { featuredMugsConfig } from "../../../../public/Data/configs";
+import { featuredMugsConfig } from "../../../public/Data/configs";
 export const MugPlates = () => {
   return featuredMugsConfig.map((mug, idx) => {
     return (
@@ -12,7 +12,7 @@ export const MugPlates = () => {
       >
         {mug.onSale && <span className="mug-sale">On sale.</span>}
         <div className="overlay" />
-        <img src={mug.url} alt={mug.alt} />
+        <img src={mug.img.url} alt={mug.img.alt} />
         <p className="mug-subtext">{mug.name}</p>
         <div className="cost-wrapper">
           <span className="cost-standard">₽{mug.price} RUR</span>

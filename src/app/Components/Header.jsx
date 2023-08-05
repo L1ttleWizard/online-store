@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { headerConfig } from "../../../public/Data/configs";
+ 
 
 export const Header = () => {
   const HeaderComp = ({ name, url }) => {

@@ -6,15 +6,28 @@ import { MainContent } from "./Components/CartActionPlate";
 import { StoreRenderer } from "./Components/StoreRenderer";
 import { Header } from "./Components/Header";
 import { Story } from "./Components/Story";
-import { FeaturedMugs } from "./Components/(FeaturedMugs)/FeaturedMugs";
+import { FeaturedMugs } from "./(FeaturedMugs)/FeaturedMugs";
+import { AfterHeader } from "./Components/AfterHeader";
+import { MoreProducts } from "./(MoreProducts)/MoreProducts";
+import { Magazine } from "./Components/Magazine";
+import { Paralax, Parallax, Parralax } from "./Components/Parallax";
+import { LifestyleStories } from "./(LifestyleStories)/LifestyleStories";
+import { Form } from "./Components/Form";
+import { Footer } from "./Components/Footer";
 
 export default function Home() {
   return (
     <div className=" ml-20 mr-20">
       <Header/>
+      <AfterHeader/>
       <Story/>
       <FeaturedMugs/>
-      <StoreRenderer />
+      <MoreProducts/>
+      <Magazine/>
+      <Parallax/>
+      <LifestyleStories/>
+      <Form/>
+      <Footer/>
     </div>
   );
 }
