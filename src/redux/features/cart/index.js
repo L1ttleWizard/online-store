@@ -7,7 +7,7 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     increment: (state, { payload }) => {
-      const count = state[payload] || 0;
+      const count = state[payload] || false;
       state[payload] = count + 1;
     },
     decrement: (state, { payload }) => {

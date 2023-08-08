@@ -1,9 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { headerConfig } from "../../../public/Data/configs";
- 
+import { CartOverlay } from "./(Cart)/CartOverlay";
+import { useDispatch, useSelector } from "react-redux";
+import { toggle } from "@/redux/features/switch";
 
-export const Header = () => {
+export const  Header = () => {
+  const dispatch = useDispatch();
+
   const HeaderComp = ({ name, url }) => {
     return (
       <li>
@@ -13,6 +18,7 @@ export const Header = () => {
       </li>
     );
   };
+
   return (
     <header className="header">
       <div className="container">
@@ -23,7 +29,9 @@ export const Header = () => {
               <HeaderComp key={idx} name={item.name} url={item.url} />
             ))}
           </ul>
-          <a href="#" className="cart">
+          <a href="#" className="cart" onClick={()=>{
+            dispatch(toggle());
+          }}>
             <img
               src="img/cart icon.png"
               style={{ width: 16, height: 20, marginRight: 10 }}

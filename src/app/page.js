@@ -1,4 +1,5 @@
 "use client";
+import "./style.css";
 import { selectProductAmount } from "@/redux/features/cart/selector";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,20 +15,26 @@ import { Paralax, Parallax, Parralax } from "./Components/Parallax";
 import { LifestyleStories } from "./(LifestyleStories)/LifestyleStories";
 import { Form } from "./Components/Form";
 import { Footer } from "./Components/Footer";
+import { createContext } from "react";
+import { CartOverlay } from "./Components/(Cart)/CartOverlay";
 
 export default function Home() {
+  const cartOpen = useSelector((state)=> state.switch.active);
+ 
   return (
     <div className=" ml-20 mr-20">
-      <Header/>
-      <AfterHeader/>
-      <Story/>
-      <FeaturedMugs/>
-      <MoreProducts/>
-      <Magazine/>
-      <Parallax/>
-      <LifestyleStories/>
-      <Form/>
-      <Footer/>
+      <Header />
+      {cartOpen&&<CartOverlay />}
+      
+      <AfterHeader />
+      <Story />
+      <FeaturedMugs />
+      <MoreProducts />
+      <Magazine />
+      <Parallax />
+      <LifestyleStories />
+      <Form />
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,17 @@
 import React from "react";
 import { featuredMugsConfig } from "../../../public/Data/configs";
+import { useDispatch, useSelector } from "react-redux";
+import { selectProductAmount } from "@/redux/features/cart/selector";
+import { cartActions } from "@/redux/features/cart";
 export const MugPlates = () => {
   return featuredMugsConfig.map((mug, idx) => {
+    const PRODUCT_ID = mug.id;
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const dispatch = useDispatch();
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const productAmount = useSelector((state) =>
+      selectProductAmount(state, PRODUCT_ID)
+    );
     return (
       <div
         className={`mug--${
@@ -23,6 +33,26 @@ export const MugPlates = () => {
         <a href="#" className="visuallyhidden">
           explore mug
         </a>
+        <div>
+          {!Boolean(productAmount) && (
+            <button onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}>
+              Add item to cart
+            </button>
+          )}
+          {productAmount && (
+            <button onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}>
+              +
+            </button>
+          )}
+          {productAmount && (
+            <button onClick={() => dispatch(cartActions.decrement(PRODUCT_ID))}>
+              -
+            </button>
+          )}
+          {Boolean(productAmount) && (
+            <div>Currently in cart:{productAmount}</div>
+          )}
+        </div>
       </div>
     );
   });

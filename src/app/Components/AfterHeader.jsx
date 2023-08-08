@@ -10,7 +10,7 @@ export const AfterHeader = () => {
           The most versatile furniture system ever created. Designed to fit your
           life, made to move and grow.
         </p>
-        <a href="#" className="explore-button">
+        <a  href="#" className="explore-button" >
           explore our products
         </a>
       </div>

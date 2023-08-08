@@ -1,13 +1,13 @@
 
-import './style.css'
+import 'animate.css'
 import { Inter } from 'next/font/google'
 import StoreProvider from '@/redux/StoreProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 
 export const metadata = {
-  title: 'Random cat images',
-  description: 'created just 4 fun',
+  title: 'Coffee Style',
+  description: 'Offering best drinks',
 }
 
 export default function RootLayout({ children }) {

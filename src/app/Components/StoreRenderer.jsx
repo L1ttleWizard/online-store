@@ -5,6 +5,7 @@ import { CartActionPlate } from "./CartActionPlate";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProductAmount } from "@/redux/features/cart/selector";
 import { cartActions, cartSlice } from "@/redux/features/cart";
+import { off, on, toggle } from "@/redux/features/switch";
 
 export const StoreRenderer = (prop) => {
   const Plate = ({ prop }) => {
@@ -46,6 +47,28 @@ export const StoreRenderer = (prop) => {
             <div>Currently in cart:{productAmount}</div>
           )}
         </div>
+        <div>current</div>
+        <button
+          onClick={() => {
+            dispatch(on());
+          }}
+        >
+          on
+        </button>
+        <button
+          onClick={() => {
+            dispatch(off());
+          }}
+        >
+          off
+        </button>
+        <button
+          onClick={() => {
+            dispatch(toggle());
+          }}
+        >
+          toggle
+        </button>
       </div>
     );
   };
@@ -53,7 +76,7 @@ export const StoreRenderer = (prop) => {
   const Plates = Dataset.map((item) => {
     return <Plate key={item.id} prop={item} className="" />;
   });
-  
+
   return (
     <div className=" flex flex-row flex-wrap justify-center gap-x-5">
       {Plates}

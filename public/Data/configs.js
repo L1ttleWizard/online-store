@@ -4,7 +4,7 @@ export const headerConfig = [
     url: "#",
   },
   {
-    name: "our products",
+    name: "products",
     url: "#",
   },
   {
@@ -34,6 +34,7 @@ export const featuredMugsConfig = [
   //one or two items
   {
     name: "Golden Designers Mug",
+    id:1,
     img: { url: "img/golden designers mug.jpg", alt: "golden mug" },
     price: 200,
     onSale: false,
@@ -41,6 +42,7 @@ export const featuredMugsConfig = [
   },
   {
     name: "Pink premium ceramic",
+    id:2,
     img: { url: "img/pink premium ceramic.jpg", alt: "pink premium" },
     price: 200,
     onSale: true,
@@ -50,6 +52,7 @@ export const featuredMugsConfig = [
 export const MoreProductsConfig = [
   {
     name: "Red love cup",
+    id:3,
     img: {
       url: "img/red love cup.jpg",
       alt: "red love cup",
@@ -60,6 +63,7 @@ export const MoreProductsConfig = [
   },
   {
     name: "Black tea",
+    id:4,
     img: {
       url: "img/black tea cup.jpg",
       alt: "black tea cup",
@@ -70,6 +74,7 @@ export const MoreProductsConfig = [
   },
   {
     name: "B&W Essentials Mug",
+    id:5,
     img: {
       url: "img/b & w essentials mug.jpg",
       alt: "b&w essentials mug",
@@ -80,6 +85,7 @@ export const MoreProductsConfig = [
   },
   {
     name: "Winter Style Mug",
+    id:6,
     img: {
       url: "img/winter style mug.jpg",
       alt: "Winter Style Mug",
@@ -90,6 +96,7 @@ export const MoreProductsConfig = [
   },
   {
     name: "Ceramic tea",
+    id:7,
     img: {
       url: "img/ceramic tea.jpg",
       alt: "Ceramic Tea",
@@ -100,6 +107,7 @@ export const MoreProductsConfig = [
   },
   {
     name: "No Handle Bar Cup",
+    id:8,
     img: {
       url: "img/no handle bar cup.jpg",
       alt: "No Handle Bar Cup",
@@ -109,7 +117,9 @@ export const MoreProductsConfig = [
     salePrice: null,
   },
   {
+
     name: "Pink Premium Ceramic",
+    id:2,
     img: {
       url: "img/pink premium ceramic.jpg",
       alt: "pink mug",
@@ -120,6 +130,7 @@ export const MoreProductsConfig = [
   },
   {
     name: "Summer Designer Cup",
+    id:9,
     img: {
       url: "img/summer designer cup.jpg",
       alt: "Summer Designer Cup",
