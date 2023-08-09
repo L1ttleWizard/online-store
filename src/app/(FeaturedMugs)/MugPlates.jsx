@@ -52,6 +52,9 @@ export const MugPlates = () => {
           {Boolean(productAmount) && (
             <div>Currently in cart:{productAmount}</div>
           )}
+          {Boolean(productAmount) && (
+            <button onClick={()=>{dispatch(cartActions.resetThis(PRODUCT_ID))}}>delete item from cart</button>
+          )}
         </div>
       </div>
     );
