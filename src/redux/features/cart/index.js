@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const savedState = JSON.parse(localStorage.getItem('reduxState'));
+let savedState = JSON.parse(localStorage.getItem("reduxState"));
 
-
-
-const initialState = savedState.cart ||  {
-  // Your initial state here
-};
+let initialState =
+  savedState.cart ||
+  {
+    // Your initial state here
+  };
 
 export const cartSlice = createSlice({
   name: "cart",
@@ -30,8 +30,13 @@ export const cartSlice = createSlice({
 
       state[payload] = count - 1;
     },
-    reset: () => initialState,
-    resetThis:(state,{payload})=>{delete state[payload]}
+    reset: (state) => {
+      state.cart = {};
+      localStorage.removeItem("reduxState");
+    },
+    resetThis: (state, { payload }) => {
+      delete state[payload];
+    },
   },
 });
 export const cartReducer = cartSlice.reducer;
