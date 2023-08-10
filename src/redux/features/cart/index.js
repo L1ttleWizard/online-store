@@ -2,11 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const savedState = JSON.parse(localStorage.getItem("reduxState"));
 
-
-
-const initialState = savedState.cart ||  {
+let initialState = {
   // Your initial state here
 };
+if (Boolean(savedState)) {
+  initialState = savedState.cart;
+  console.log(savedState)
+}
 
 export const cartSlice = createSlice({
   name: "cart",
