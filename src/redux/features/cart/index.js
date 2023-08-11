@@ -5,10 +5,6 @@ const savedState = JSON.parse(localStorage.getItem("reduxState"));
 let initialState = {
   // Your initial state here
 };
-if (Boolean(savedState)) {
-  initialState = savedState.cart;
-  console.log(savedState.cart);
-}
 
 export const cartSlice = createSlice({
   name: "cart",
