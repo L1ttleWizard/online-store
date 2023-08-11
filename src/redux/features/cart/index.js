@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const savedState = JSON.parse(localStorage.getItem("reduxState"));
 
-let initialState = {
+const initialState =  {
   // Your initial state here
 };
 
