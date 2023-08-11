@@ -3,7 +3,6 @@ import { selectProductAmount } from "@/redux/features/cart/selector";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MoreProductsConfig, featuredMugsConfig } from "../../../../public/Data/configs"; 
-import { cartActions } from "@/redux/features/cart";
 
 
 const allProductsRAW = MoreProductsConfig.concat(featuredMugsConfig);
