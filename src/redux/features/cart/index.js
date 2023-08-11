@@ -7,7 +7,7 @@ let initialState = {
 };
 if (Boolean(savedState)) {
   initialState = savedState.cart;
-  console.log(savedState)
+  console.log(savedState.cart);
 }
 
 export const cartSlice = createSlice({
