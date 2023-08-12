@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import { headerConfig } from "../../../public/Data/configs";
 import { CartOverlay } from "./(Cart)/CartOverlay";
 import { useDispatch, useSelector } from "react-redux";
-import { toggle } from "@/redux/features/switch";
+import { on, toggle } from "@/redux/features/switch";
 import { StoreLength } from "../utils/store.length";
+import { cartActions } from "@/redux/features/cart";
 
 export const  Header = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ export const  Header = () => {
               <HeaderComp key={idx} name={item.name} url={item.url} />
             ))}
           </ul>
-          <Link href="/cart" className="cart" >
+          <a href="#" className="cart" onClick={()=>{dispatch(toggle())}} >
             <img
               src="img/cart icon.png"
               style={{ width: 16, height: 20, marginRight: 10 }}
@@ -38,7 +39,7 @@ export const  Header = () => {
             />
             <p>cart</p>
             <span>{StoreLength()}</span>
-          </Link>
+          </a>
         </nav>
       </div>
     </header>
