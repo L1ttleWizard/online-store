@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectProductAmount } from "@/redux/features/cart/selector";
 import { cartActions } from "@/redux/features/cart";
 export const MugPlates = () => {
+
   return featuredMugsConfig.map((mug, idx) => {
     const PRODUCT_ID = mug.id;
     // eslint-disable-next-line react-hooks/rules-of-hooks

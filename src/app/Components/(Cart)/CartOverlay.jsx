@@ -1,22 +1,28 @@
+"use client"
 import React from "react";
 import { CartEmpty } from "./CartEmpty";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { off } from "@/redux/features/switch";
 import { CartPlates } from "./CartPlates";
+import { StoreLength } from "@/app/utils/store.length";
 
 export const CartOverlay = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   return (
     <div className="right-container">
       <div className="sidebar-header">
         <p className="your-cart">your cart</p>
-        <span onClick={()=>{
-          dispatch(off());
-        }} className="x-logo" />
+        <span
+          onClick={() => {
+            dispatch(off());
+          }}
+          className="x-logo"
+        />
       </div>
       <div className="sidebar-main">
-        <CartPlates/>
+        {StoreLength()>0?<CartPlates />:<CartEmpty/>}
       </div>
     </div>
   );
 };
+    
