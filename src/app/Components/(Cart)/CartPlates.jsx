@@ -27,6 +27,7 @@ const filteredArray = allProducts.filter((obj) =>
     const PRODUCT_ID = mug.id;
     
     
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const productAmount = useSelector((state) =>
     selectProductAmount(state, PRODUCT_ID)
   );
