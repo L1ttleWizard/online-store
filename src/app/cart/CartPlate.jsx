@@ -18,22 +18,15 @@ const allProducts = allProductsRAW.reduce((accumulator, currentValue) => {
 }, []);
 
 export const CartPlate = () => {
-  const dispatch = useDispatch()
   const cartItems = useSelector((state) => state.cart);
   const filteredArray = allProducts.filter((obj) =>
     cartItems.hasOwnProperty(obj.id)
   );
   console.log("filteredArray :>> ", filteredArray);
-  return (
-    <div>
-      {filteredArray.map((mug) => {
-        return (
-          <>
-            <CartItem mug={mug} key={mug.id} />
-            <button onClick={()=>{dispatch(cartActions.reset())}}>clear cart</button>
-          </>
-        );
-      })}
-    </div>
-  );
+  return(
+    <div>{filteredArray.map((mug)=>{
+      return(<CartItem mug={mug} key={mug.id}/>)
+    })}</div>
+    
+  )
 };
