@@ -5,13 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { CartPlate } from "./CartPlate";
 export default function Home() {
   
-  const dispatch = useDispatch();
-  const productAmount = useSelector((state) => state
-  
-);
-return (
+ return (
   <div>
-    <CartPlate/>
+    
   </div>
 )
 }

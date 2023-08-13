@@ -3,8 +3,8 @@ import React from "react";
 import { CartEmpty } from "./CartEmpty";
 import { useDispatch, useSelector } from "react-redux";
 import { off } from "@/redux/features/switch";
-import { CartPlates } from "./CartPlates";
 import { StoreLength } from "@/app/utils/store.length";
+import { CartPlate } from "@/app/cart/CartPlate";
 
 export const CartOverlay = () => {
   const dispatch = useDispatch()
@@ -20,7 +20,7 @@ export const CartOverlay = () => {
         />
       </div>
       <div className="sidebar-main">
-        {StoreLength()>0?<CartPlates />:<CartEmpty/>}
+        {StoreLength()>0?<CartPlate />:<CartEmpty/>}
       </div>
     </div>
   );
