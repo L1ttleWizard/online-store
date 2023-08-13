@@ -17,7 +17,7 @@ import { Form } from "./Components/Form";
 import { Footer } from "./Components/Footer";
 import { createContext } from "react";
 import { CartOverlay } from "./Components/(Cart)/CartOverlay";
-import { CartPlate } from "./cart/CartPlate";
+
 
 export default function Home() {
   const cartOpen = useSelector((state)=> state.switch.active);
