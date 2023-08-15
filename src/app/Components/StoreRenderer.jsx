@@ -1,10 +1,8 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { Dataset } from "../../../public/Data/product_data";
-import Image from "next/image";
-import { CartActionPlate } from "./CartActionPlate";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProductAmount } from "@/redux/features/cart/selector";
-import { cartActions, cartSlice } from "@/redux/features/cart";
+import { cartActions } from "@/redux/features/cart";
 import { off, on, toggle } from "@/redux/features/switch";
 
 export const StoreRenderer = (prop) => {
@@ -17,7 +15,7 @@ export const StoreRenderer = (prop) => {
 
     return (
       <div className=" bg-slate-500 w-2/6 h-2/6 rounded-2xl flex flex-col justify-center align-middle gap-y-5 p-3 text-center ">
-        <Image
+        <img
           className=""
           src={prop.img.url}
           alt={prop.img.alt}

@@ -1,13 +1,10 @@
 "use client";
-import { cartActions } from "@/redux/features/cart";
-import { selectProductAmount } from "@/redux/features/cart/selector";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   MoreProductsConfig,
   featuredMugsConfig,
-} from "../../../public/Data/configs";
-import { CartItem } from "./CartItem";
+} from "../../../../public/Data/configs";
 
 const allProductsRAW = MoreProductsConfig.concat(featuredMugsConfig);
 const allProducts = allProductsRAW.reduce((accumulator, currentValue) => {
@@ -24,9 +21,9 @@ export const CartPlate = () => {
   );
   console.log("filteredArray :>> ", filteredArray);
   return(
-    <div>{filteredArray.map((mug)=>{
-      return(<CartItem mug={mug} key={mug.id}/>)
-    })}</div>
-    
+    // <div>{filteredArray.map((mug)=>{
+    //   return(<CartItem mug={mug} key={mug.id}/>)
+    // })}</div>
+    <div>he</div>
   )
 };
