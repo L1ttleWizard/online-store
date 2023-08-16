@@ -5,6 +5,7 @@ import {
   MoreProductsConfig,
   featuredMugsConfig,
 } from "../../../../public/Data/configs";
+import { CartItem } from "../CartItem";
 
 const allProductsRAW = MoreProductsConfig.concat(featuredMugsConfig);
 const allProducts = allProductsRAW.reduce((accumulator, currentValue) => {
@@ -21,9 +22,9 @@ export const CartPlate = () => {
   );
   console.log("filteredArray :>> ", filteredArray);
   return(
-    // <div>{filteredArray.map((mug)=>{
-    //   return(<CartItem mug={mug} key={mug.id}/>)
-    // })}</div>
-    <div>he</div>
+    <div>{filteredArray.map((mug)=>{
+      return(<CartItem mug={mug} key={mug.id}/>)
+    })}</div>
+    
   )
 };

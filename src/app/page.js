@@ -10,6 +10,9 @@ import { Parallax } from "./Components/Parallax";
 import { LifestyleStories } from "./(LifestyleStories)/LifestyleStories";
 import { Form } from "./Components/Form";
 import { Footer } from "./Components/Footer";
+import { FeaturedMugs } from "./(FeaturedMugs)/FeaturedMugs";
+import { MoreProducts } from "./(MoreProducts)/MoreProducts";
+import { CartOverlay } from "./Components/(Cart)/CartOverlay";
 
 
 export default function Home() {
@@ -18,12 +21,12 @@ export default function Home() {
   return (
     <div className=" ml-20 mr-20">
       <Header />
-      {/* {cartOpen&&<CartOverlay />} */}
+       {cartOpen&&<CartOverlay />}
       
       <AfterHeader />
       <Story />
-      {/* <FeaturedMugs />
-      <MoreProducts /> */}
+      <FeaturedMugs />
+      <MoreProducts />
       <StoreRenderer/>
       <Magazine />
       <Parallax />

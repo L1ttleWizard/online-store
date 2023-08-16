@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { storyConfig } from "../../../public/Data/configs";
 console.log(storyConfig);

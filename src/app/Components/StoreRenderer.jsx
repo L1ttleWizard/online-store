@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { Dataset } from "../../../public/Data/product_data";
 import { useDispatch, useSelector } from "react-redux";
