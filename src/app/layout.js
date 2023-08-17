@@ -1,4 +1,4 @@
-
+"use client"
 import { ScaleLoader } from 'react-spinners'
 import 'animate.css'
 import { Inter } from 'next/font/google'
