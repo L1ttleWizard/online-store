@@ -27,7 +27,7 @@ export default function Home() {
       <Story />
       <FeaturedMugs />
       <MoreProducts />
-      <StoreRenderer/>
+      
       <Magazine />
       <Parallax />
       <LifestyleStories />

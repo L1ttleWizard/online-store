@@ -40,6 +40,13 @@ nav ul .active {
   opacity: 1;
 }
 
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 150px;
+
+}
+
 .cart {
   display: flex;
   flex-direction: row;
@@ -75,6 +82,29 @@ nav ul .active {
 
 .cart img {
   margin-right: 10px;
+}
+
+.controls-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+  background-color: #F1F0ED;
+  width: fit-content;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 10px auto;
+  padding: 10px 5px;
+  border-radius: 10px;
+  width: 150px;
+  height: 30px;
+
+}
+
+.controls-wrapper button {
+  text-decoration: none;
+  background: transparent;
+  border: 0;
 }
 
 nav img,
@@ -216,12 +246,11 @@ nav ul {
 }
 
 /*================================================================*/
-/*featured mugs*/
+/* featured mugs */
 .feature-mugs div .flex-wrapper {
   display: flex;
-
   justify-content: space-between;
-  height: 660px;
+  height: fit-content;
   column-gap: 20px;
   align-content: center;
 }
@@ -237,6 +266,79 @@ nav ul {
   margin-top: 35px;
 }
 
+.mug--onsale--big {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+
+}
+
+.mug--standard--big {
+  position:relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.mug--onsale--standard {}
+
+.mug-sale {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  background-color: #a25f4b;
+  padding: 5px;
+}
+
+.cost-sale {
+font-size: 80%;
+position:relative;
+
+
+}
+.cost-sale::after{
+  display: block;
+  content:"";
+  position: relative;
+  background-color:red;
+  color:red;
+  width:39.5;
+  height:3px;
+  border-radius:3px;
+  transform: rotate(-27deg);
+
+  top:-15px;
+  left:0;
+}
+
+.cost-standard {
+  
+  letter-spacing: 0.2px;
+ 
+}
+.sale{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 150%;
+  color: red;
+}
+
+.cost-wrapper {
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+}
+.add-cart{
+  text-decoration:none;
+  border:3px solid rgb(243, 243, 23);
+  background-color:yellow;
+  padding:5px;
+  border-radius: 7px;
+
+}
 /*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 
 /****************************************************************/
@@ -249,6 +351,29 @@ nav ul {
   margin-bottom: 50px;
   column-gap: 20px;
   position: relative;
+}
+.mug--standard--common,.mug--onsale--common{
+  width:40%;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  
+}
+.mug--standard--common button{
+  text-align: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+.mug--onsale--common button{
+ display: flex;
+ margin-left: auto;
+ margin-right: auto;
 }
 
 /*magazine*/

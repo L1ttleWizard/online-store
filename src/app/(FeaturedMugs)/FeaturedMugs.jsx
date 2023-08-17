@@ -6,8 +6,8 @@ export const FeaturedMugs = ()=>{
     return(
         <section className="feature-mugs">
             <div className="container">
-                <h2 className="feature-mugs--title">featured mugs</h2>
-                <div className="flex-wrapper">
+                <h2 className="feature-mugs title">featured mugs</h2>
+                <div className=" flex-wrapper">
                     <MugPlates/>
                 </div>
             </div>

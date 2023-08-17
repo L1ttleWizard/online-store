@@ -1,10 +1,10 @@
 import React from "react";
+import { FaXmark } from "react-icons/fa6";
 import { featuredMugsConfig } from "../../../public/Data/configs";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProductAmount } from "@/redux/features/cart/selector";
 import { cartActions } from "@/redux/features/cart";
 export const MugPlates = () => {
-
   return featuredMugsConfig.map((mug, idx) => {
     const PRODUCT_ID = mug.id;
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -26,35 +26,43 @@ export const MugPlates = () => {
         <img src={mug.img.url} alt={mug.img.alt} />
         <p className="mug-subtext">{mug.name}</p>
         <div className="cost-wrapper">
-          <span className="cost-standard">₽{mug.price} RUR</span>
+          <span className={`cost-standard ${mug.onSale&&'sale'}`}>{mug.price} ₽</span>
           {mug.onSale && (
-            <span className="cost-sale">₽{mug.salePrice} RUR</span>
+            <span className="cost-sale">{mug.salePrice} ₽</span>
           )}
         </div>
-        <a href="#" className="visuallyhidden">
-          explore mug
-        </a>
+
         <div>
           {!Boolean(productAmount) && (
-            <button onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}>
+            <button className="add-cart" onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}>
               Add item to cart
             </button>
           )}
-          {productAmount && (
-            <button onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}>
-              +
-            </button>
+          {Boolean(productAmount) &&
+          (
+            <div className="controls-wrapper">
+              <button
+                onClick={() => dispatch(cartActions.decrement(PRODUCT_ID))}
+              >
+                -
+              </button>
+              <div>{productAmount}</div>
+              <button
+                onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}
+              >
+                +
+              </button>
+            </div>
           )}
-          {productAmount && (
-            <button onClick={() => dispatch(cartActions.decrement(PRODUCT_ID))}>
-              -
-            </button>
-          )}
+
           {Boolean(productAmount) && (
-            <div>Currently in cart:{productAmount}</div>
-          )}
-          {Boolean(productAmount) && (
-            <button onClick={()=>{dispatch(cartActions.resetThis(PRODUCT_ID))}}>delete item from cart</button>
+            <button
+              onClick={() => {
+                dispatch(cartActions.resetThis(PRODUCT_ID));
+              }}
+            >
+              <FaXmark/>
+            </button>
           )}
         </div>
       </div>

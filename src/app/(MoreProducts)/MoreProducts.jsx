@@ -4,9 +4,9 @@ import { MugPlates } from "./MugPlates";
 export const MoreProducts = ()=>{
     
     return(
-        <section className="more_products">
+        <section className="more-products">
             <div className="container">
-                <h2 className="more_products--title">more products</h2>
+                <h2 className="title">more products</h2>
                 <div className="more-products-inner">
                     <MugPlates/>
                     

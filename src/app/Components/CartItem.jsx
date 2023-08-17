@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "@/redux/features/cart";
-export const CartItem = ({mug}) => {
+export const    CartItem = ({mug}) => {
     const PRODUCT_ID = mug.id;
     const dispatch = useDispatch();
     const productAmount = useSelector((state) =>

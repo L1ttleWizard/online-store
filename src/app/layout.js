@@ -1,4 +1,5 @@
 "use client"
+import { ScaleLoader } from 'react-spinners'
 import 'animate.css'
 import { Inter } from 'next/font/google'
 import StoreProvider from '@/redux/StoreProvider'
@@ -16,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       
-        <body className={inter.className}><StoreProvider><PersistGate loading={<div>loading</div>} persistor={persistor}>{children}</PersistGate></StoreProvider></body>
+        <body className={inter.className}><StoreProvider><PersistGate loading={<ScaleLoader size = {500}/>} persistor={persistor}>{children}</PersistGate></StoreProvider></body>
       
     </html>
   )
