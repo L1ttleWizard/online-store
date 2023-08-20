@@ -31,7 +31,8 @@ export const  Header = () => {
               <HeaderComp key={idx} name={item.name} url={item.url} />
             ))}
           </ul>
-          <a href="#" className="cart" onClick={()=>{dispatch(toggle())}} >
+          {/* <a href="#" className="cart" onClick={()=>{dispatch(toggle())}} > */}
+          <Link href={'cart'} className="cart">
             <img
               src="img/cart icon.png"
               style={{ width: 16, height: 20, marginRight: 10 }}
@@ -39,7 +40,7 @@ export const  Header = () => {
             />
             <p>cart</p>
             <span>{StoreLength()}</span>
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

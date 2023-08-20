@@ -1,11 +1,11 @@
 export const headerConfig = [
   {
     name: "home",
-    url: "#",
+    url: "/",
   },
   {
     name: "products",
-    url: "#",
+    url: "#", 
   },
   {
     name: "blog",
@@ -33,7 +33,7 @@ export const storyConfig = {
 
 export const MoreProductsConfig = [
   {
-    name: "Red love cup",
+    name: "Red losve cup with the blue heart of the blue heart of the blue heart of the blue heart of the blue heart",
     id:3,
     img: {
       url: "img/red love cup.jpg",

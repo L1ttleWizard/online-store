@@ -20,8 +20,8 @@ export default function Home() {
  
   return (
     <div className=" ml-20 mr-20">
-      <Header />
-       {cartOpen&&<CartOverlay />}
+      
+       {/* {cartOpen&&<CartOverlay />} */}
       
       <AfterHeader />
       <Story />
@@ -32,7 +32,7 @@ export default function Home() {
       <Parallax />
       <LifestyleStories />
       <Form />
-      <Footer />
+      
     </div>
   );
 }

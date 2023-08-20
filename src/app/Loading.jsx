@@ -2,5 +2,5 @@ import React from "react";
 import { ScaleLoader } from 'react-spinners'
 
 export const Loading = ()=>{
-    return(<ScaleLoader/>)
+    return(<ScaleLoader className="w-full"/>)
 }

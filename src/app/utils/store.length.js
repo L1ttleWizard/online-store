@@ -5,5 +5,6 @@ export const StoreLength = ()=>{
   const storage = useSelector((state) => {
     return state.cart;
   });
-  return  Object.keys(storage).length-1
+  console.log(Object.keys(storage))
+  return  Object.keys(storage).length-2
 }
