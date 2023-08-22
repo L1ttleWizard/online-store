@@ -1,6 +1,8 @@
 {
-    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.colorTheme": "Monokai Pro",
     "window.autoDetectColorScheme": false,
-    "workbench.preferredLightColorTheme": "Default Dark Modern",
-    "workbench.preferredHighContrastLightColorTheme": "Default Dark Modern"
+    "workbench.preferredLightColorTheme": "Monokai",
+    "workbench.preferredHighContrastLightColorTheme": "Monokai",
+    "totvsLanguageServer.welcomePage": false,
+    "workbench.iconTheme": "material-icon-theme"
 }

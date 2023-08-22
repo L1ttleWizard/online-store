@@ -26,20 +26,26 @@ export const MugPlates = () => {
         <img src={mug.img.url} alt={mug.img.alt} />
         <p className="mug-subtext">{mug.name}</p>
         <div className="cost-wrapper">
-          <span className={`cost-standard ${mug.onSale&&'sale'}`}>{mug.price} ₽</span>
+          <span className={`cost-standard ${mug.onSale && "sale"}`}>
+            {mug.price} ₽
+          </span>
           {mug.onSale && (
-            <span className="cost-sale">{mug.salePrice} ₽</span>
+            <span className="cost-sale ml-2 line-through decoration-2 decoration-red">
+              {mug.salePrice} ₽
+            </span>
           )}
         </div>
 
         <div>
           {!Boolean(productAmount) && (
-            <button className="add-cart" onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}>
+            <button
+              className="add-cart"
+              onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}
+            >
               Add item to cart
             </button>
           )}
-          {Boolean(productAmount) &&
-          (
+          {Boolean(productAmount) && (
             <div className="controls-wrapper">
               <button
                 onClick={() => dispatch(cartActions.decrement(PRODUCT_ID))}
@@ -57,12 +63,12 @@ export const MugPlates = () => {
 
           {Boolean(productAmount) && (
             <button
-            className="delete-cart"
+              className="delete-cart"
               onClick={() => {
                 dispatch(cartActions.resetThis(PRODUCT_ID));
               }}
             >
-              <FaXmark/>
+              <FaXmark />
             </button>
           )}
         </div>

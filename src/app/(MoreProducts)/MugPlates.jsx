@@ -18,53 +18,48 @@ export const MugPlates = () => {
       <div
         className={`mug--${
           mug.onSale ? "standard" : "onsale"
-        }--common wow slideInUp`}
+        }--common wow slideInUp mb-5`}
         data-wow-offset={3}
         key={idx}
       >
         {mug.onSale && <span className="mug-sale">On sale.</span>}
         <div className="overlay" />
         <img src={mug.img.url} alt={mug.img.alt} />
-        
+
         <p className="mug-subtext">{mug.name}</p>
-        <div className="cost-wrapper">
-          <span className={`cost-standard ${mug.onSale&&'sale'}`}>{mug.price} ₽</span>
-          {mug.onSale && (
-            <span className="cost-sale">{mug.salePrice} ₽</span>
-          )}
-        </div>
-        <div>
-          {!Boolean(productAmount) && (
-            <button className="add-cart" onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}>
-              Add item to cart
-            </button>
-          )}
-          {Boolean(productAmount) &&
-          (
-            <div className="controls-wrapper">
+        <div className="flex flex-row justify-center gap-x-3 items-baseline ">
+          <div className="cost-wrapper">
+            <span className={`cost-standard ${mug.onSale && "sale"} mr-2`}>
+              {mug.price} ₽
+            </span>
+            {mug.onSale && <span className="cost-sale">{mug.salePrice} ₽</span>}
+          </div>
+          <div>
+            {!Boolean(productAmount) && (
               <button
-                onClick={() => dispatch(cartActions.decrement(PRODUCT_ID))}
-              >
-                -
-              </button>
-              <div>{productAmount}</div>
-              <button
+                className="add-cart"
                 onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}
               >
-                +
+                Add item to cart
               </button>
-            </div>
-          )}
-
-          {Boolean(productAmount) && (
-            <button className="delete-cart"
-              onClick={() => {
-                dispatch(cartActions.resetThis(PRODUCT_ID));
-              }}
-            >
-              <FaXmark/>
-            </button>
-          )}
+            )}
+            {Boolean(productAmount) && (
+              <div className=" bg-gray flex flex-row justify-between w-28 px-5 items-center mt-auto mb-auto rounded-lg">
+                <button
+                  className=""
+                  onClick={() => dispatch(cartActions.decrement(PRODUCT_ID))}
+                >
+                  -
+                </button>
+                <div>{productAmount}</div>
+                <button
+                  onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}
+                >
+                  +
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     );

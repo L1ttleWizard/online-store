@@ -10,11 +10,10 @@ export const LifestyleStories = () => {
             behind, lifestyle stories
           </h2>
           <div className="lifestyle-inner">
-            <Stories/>
+            <Stories />
           </div>
         </div>
       </section>
-      
     </section>
   );
 };

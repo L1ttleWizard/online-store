@@ -29,14 +29,18 @@ export const CartItem = ({ mug }) => {
                 dispatch(cartActions.resetThis(PRODUCT_ID));
               }}
             >
-              <FaXmark />
+              <FaXmark size={"1.5em"} color="gray" />
             </button>
           )}
         </div>
         <div className="flex flex-col justify-start ml-auto">
-          <span className="cost-standard">{mug.price} <span className="font-sm">₽</span></span>
+          <span className={`cost standard ${mug.onSale && "text-red"}`}>
+            {mug.price} <span className="font-sm ">₽</span>
+          </span>
           {mug.onSale && (
-            <span className="cost-sale">{mug.salePrice} <span className="font-xs">₽</span></span>
+            <span className="cost-sale line-through decoration-red decoration-2">
+              {mug.salePrice} <span className="font-xs">₽</span>
+            </span>
           )}
           <div className=" mt-auto">
             {!Boolean(productAmount) && (
