@@ -39,9 +39,9 @@ export const MoreProductsConfig = [
       url: "img/red love cup.jpg",
       alt: "red love cup",
     },
-    price: 37,
+    price: 25,
     onSale: true,
-    salePrice: 25,
+    salePrice: 37,
   },
   {
     name: "Black tea",
@@ -50,9 +50,9 @@ export const MoreProductsConfig = [
       url: "img/black tea cup.jpg",
       alt: "black tea cup",
     },
-    price: 29,
+    price: 15,
     onSale: true,
-    salePrice: 15,
+    salePrice: 29,
   },
   {
     name: "B&W Essentials Mug",

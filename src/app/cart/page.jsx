@@ -30,7 +30,9 @@ export default function Home() {
             return <CartItem mug={mug} key={mug.id} />;
           })}
         </div>
-        <div className=" w-5/12 ps-5">c-s</div>
+        <div className=" w-5/12 ps-5 flex flex-col items-center">
+          <button className="bg-yellow p-3 cursor-pointer rounded-lg w-full text-center">checkout</button>
+        </div>
       </div>
     </>
   );
