@@ -5,7 +5,7 @@ export const headerConfig = [
   },
   {
     name: "products",
-    url: "#", 
+    url: "#",
   },
   {
     name: "blog",
@@ -34,7 +34,7 @@ export const storyConfig = {
 export const MoreProductsConfig = [
   {
     name: "Red losve cup with the blue heart of the blue heart of the blue heart of the blue heart of the blue heart",
-    id:3,
+    id: 3,
     img: {
       url: "img/red love cup.jpg",
       alt: "red love cup",
@@ -45,7 +45,7 @@ export const MoreProductsConfig = [
   },
   {
     name: "Black tea",
-    id:4,
+    id: 4,
     img: {
       url: "img/black tea cup.jpg",
       alt: "black tea cup",
@@ -56,7 +56,7 @@ export const MoreProductsConfig = [
   },
   {
     name: "B&W Essentials Mug",
-    id:5,
+    id: 5,
     img: {
       url: "img/b & w essentials mug.jpg",
       alt: "b&w essentials mug",
@@ -67,7 +67,7 @@ export const MoreProductsConfig = [
   },
   {
     name: "Winter Style Mug",
-    id:6,
+    id: 6,
     img: {
       url: "img/winter style mug.jpg",
       alt: "Winter Style Mug",
@@ -78,7 +78,7 @@ export const MoreProductsConfig = [
   },
   {
     name: "Ceramic tea",
-    id:7,
+    id: 7,
     img: {
       url: "img/ceramic tea.jpg",
       alt: "Ceramic Tea",
@@ -89,7 +89,7 @@ export const MoreProductsConfig = [
   },
   {
     name: "No Handle Bar Cup",
-    id:8,
+    id: 8,
     img: {
       url: "img/no handle bar cup.jpg",
       alt: "No Handle Bar Cup",
@@ -99,9 +99,8 @@ export const MoreProductsConfig = [
     salePrice: null,
   },
   {
-
     name: "Pink Premium Ceramic",
-    id:2,
+    id: 2,
     img: {
       url: "img/pink premium ceramic.jpg",
       alt: "pink mug",
@@ -112,7 +111,7 @@ export const MoreProductsConfig = [
   },
   {
     name: "Summer Designer Cup",
-    id:9,
+    id: 9,
     img: {
       url: "img/summer designer cup.jpg",
       alt: "Summer Designer Cup",
@@ -123,8 +122,10 @@ export const MoreProductsConfig = [
   },
 ];
 export const featuredMugsConfig = [
-  MoreProductsConfig[0],MoreProductsConfig[3]
+  MoreProductsConfig[0],
+  MoreProductsConfig[3],
 ];
+
 export const MagazineConfig = [
   { url: "img/magazine big image.jpg", alt: "book" },
   { url: "img/magazine small image 1.jpg", alt: "mug" },

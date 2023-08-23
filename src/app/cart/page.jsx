@@ -17,7 +17,6 @@ const allProducts = allProductsRAW.reduce((accumulator, currentValue) => {
   return accumulator;
 }, []);
 
-
 export default function Home() {
   const cartItems = useSelector((state) => state.cart);
   const filteredArray = allProducts.filter((obj) =>
@@ -25,26 +24,17 @@ export default function Home() {
   );
 
   const finalCost = filteredArray.reduce((accumulator, item) => {
-  
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const productAmount = useSelector((state) =>
-      selectProductAmount(state, item.id)
-    );
-    return accumulator + item.price * productAmount;
+    return accumulator + item.price * cartItems[item.id];
   }, 0);
+
   const rawCost = filteredArray.reduce((accumulator, item) => {
-   
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const productAmount = useSelector((state) =>
-      selectProductAmount(state, item.id)
-    );
     return item.salePrice !== null
-      ? accumulator + item.salePrice * productAmount
-      : accumulator + item.price * productAmount;
+      ? accumulator + item.salePrice * cartItems[item.id]
+      : accumulator + item.price * cartItems[item.id];
   }, 0);
-  const discountAmount = finalCost-rawCost;
-  console.log(rawCost);
-  console.log(filteredArray)
+
+  const discountAmount = finalCost - rawCost;
+  
   return (
     <>
       <h1 className="text-2xl font-bold mb-4">Cart</h1>
@@ -71,7 +61,6 @@ export default function Home() {
               <div className="">Итого</div>
               <div>{finalCost}₽</div>
             </div>
-            
           </div>
         </div>
       </div>
