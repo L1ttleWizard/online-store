@@ -845,7 +845,9 @@ ul {
   }
 
   nav ul {
-    display: none;
+    
+  
+
     position: absolute;
 
     width: 100%;
@@ -943,7 +945,7 @@ ul {
 
   nav ul {
     position: absolute;
-    display: none;
+    
     width: 100%;
     top: 55px;
     left: 0;

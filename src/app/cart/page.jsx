@@ -34,17 +34,17 @@ export default function Home() {
   }, 0);
 
   const discountAmount = finalCost - rawCost;
-  
+
   return (
     <>
       <h1 className="text-2xl font-bold mb-4">Cart</h1>
-      <div className="columns-2 flex">
+      <div className=" lg:flex-row flex-col flex">
         <div>
           {filteredArray.map((mug) => {
             return <CartItem mug={mug} key={mug.id} />;
           })}
         </div>
-        <div className=" w-5/12 ps-5 flex flex-col items-center">
+        <div className=" lg:w-5/12 w-full ps-5 flex flex-col items-center">
           <button className="bg-yellow p-3 cursor-pointer rounded-lg w-full text-center">
             checkout
           </button>

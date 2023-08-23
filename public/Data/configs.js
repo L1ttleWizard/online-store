@@ -5,7 +5,7 @@ export const headerConfig = [
   },
   {
     name: "products",
-    url: "#",
+    url: "/#products",
   },
   {
     name: "blog",

@@ -17,7 +17,7 @@ export const CartItem = ({ mug }) => {
         <img
           src={mug.img.url}
           alt={mug.img.alt}
-          className="w-32 rounded-xl aspect-square h-auto"
+          className="w-32 rounded-xl aspect-square h-32"
         />
 
         <div className="flex flex-col justify-between">

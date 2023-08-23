@@ -1,4 +1,4 @@
-"use client"
+"use client";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React, { useState } from "react";
@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggle } from "@/redux/features/switch";
 import { StoreLength } from "../utils/store.length";
 
-export const  Header = () => {
+export const Header = () => {
   const dispatch = useDispatch();
 
   const HeaderComp = ({ name, url }) => {
@@ -20,19 +20,25 @@ export const  Header = () => {
       </li>
     );
   };
-
+  const [openState, setOpenState] = useState(0);
   return (
     <header className="header">
-      <div className="container">
-        <nav>
-          <img src="img/logo.png" alt="Coffee Style" />
-          <ul>
+      <div className="">
+        <nav className="container">
+          <Link href="/">
+            <img src="img/logo.png" alt="Coffee Style" className=" w-28" />
+          </Link>
+          <ul
+            className={`lg:flex ${
+              !openState ? `hidden` : ""
+            } flex-col lg:flex-row `}
+          >
             {headerConfig.map((item, idx) => (
               <HeaderComp key={idx} name={item.name} url={item.url} />
             ))}
           </ul>
           {/* <a href="#" className="cart" onClick={()=>{dispatch(toggle())}} > */}
-          <Link href={'cart'} className="cart">
+          <Link href={"cart"} className="cart">
             <img
               src="img/cart icon.png"
               style={{ width: 16, height: 20, marginRight: 10 }}
@@ -41,6 +47,14 @@ export const  Header = () => {
             <p>cart</p>
             <span>{StoreLength()}</span>
           </Link>
+          <a
+            className="ml-3 block lg:hidden z-50"
+            onClick={() => {
+              setOpenState(!openState);
+            }}
+          >
+            <img src="img/nenu icon.png" className=" w-5"></img>
+          </a>
         </nav>
       </div>
     </header>

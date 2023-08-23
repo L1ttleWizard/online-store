@@ -19,7 +19,7 @@ export default function Home() {
   const cartOpen = useSelector((state)=> state.switch.active);
  
   return (
-    <div className=" ml-20 mr-20">
+    <div className="">
       
        {/* {cartOpen&&<CartOverlay />} */}
       
