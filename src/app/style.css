@@ -325,7 +325,7 @@ nav ul {
   text-decoration: none;
   border: 3px solid rgb(243, 243, 23);
   background-color: yellow;
-  padding: 5px;
+  padding: 0 5px;
   border-radius: 7px;
   cursor: pointer;
 
@@ -354,7 +354,7 @@ nav ul {
 
 .mug--standard--common,
 .mug--onsale--common {
-  width: 40%;
+  
   position: relative;
   display: flex;
   flex-direction: column;
@@ -445,7 +445,7 @@ ye
 /*parallax*/
 
 .parallax {
-  background: url(/public/img/parallax_bg.jpg) no-repeat;
+  background: url(../../public/img/parallax_bg.jpg) no-repeat;
   background-size: cover;
   background-attachment: fixed;
   height: 340px;
@@ -463,9 +463,7 @@ ye
 }
 
 .more-products-inner {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  
   margin-bottom: 50px;
   column-gap: 20px;
   position: relative;
@@ -526,20 +524,7 @@ ye
   transition: 0.4s linear;
 }
 
-.first-block-story {
-  background: url(/public/img/life_stories_1.jpg) no-repeat -145px 0px #000;
-  background-size: cover;
-}
 
-.second-block-story {
-  background: url(/public/img/life_stories_2.jpg) no-repeat -115px 0px;
-  background-size: cover;
-}
-
-.third-block-story {
-  background: url(/public/img/life_stories_3.jpg) no-repeat -125px 0px;
-  background-size: cover;
-}
 
 .lifestyle-subtitle {
   font-size: 20px;

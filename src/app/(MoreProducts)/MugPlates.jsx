@@ -18,7 +18,7 @@ export const MugPlates = () => {
       <div
         className={`mug--${
           mug.onSale ? "standard" : "onsale"
-        }--common wow slideInUp mb-5`}
+        }--common wow slideInUp mb-5 w-full lg:w-2/5`}
         data-wow-offset={3}
         key={idx}
       >

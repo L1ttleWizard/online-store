@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="container">
         <div className="footer-container">
           <div className="first-col-flex">
-            <img className="logo" src="img/logo.png" alt="logo" />
+            <img className="logo w-32" src="img/logo.png" alt="logo" />
             <p className="footer-text">
               Delivering the best coffee life since 1996. From coffee geeks to
               the realones.

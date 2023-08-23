@@ -10,7 +10,7 @@ export const Stories = () => {
             data-wow-offset={3}
             key={idx}
           >
-            <a href="#" className="third-block-story lifestyle-image">
+            <a href="#" className={`third-block-story lifestyle-image bg-cover`}>
               <div className="mask" />
               <span className="lifestyle-button">read the full story</span>
             </a>

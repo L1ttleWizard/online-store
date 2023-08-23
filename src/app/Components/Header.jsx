@@ -1,4 +1,5 @@
 "use client";
+import 'animate.css'
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React, { useState } from "react";
@@ -31,7 +32,7 @@ export const Header = () => {
           <ul
             className={`lg:flex ${
               !openState ? `hidden` : ""
-            } flex-col lg:flex-row `}
+            } flex-col lg:flex-row`}
           >
             {headerConfig.map((item, idx) => (
               <HeaderComp key={idx} name={item.name} url={item.url} />
