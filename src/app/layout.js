@@ -1,5 +1,5 @@
 "use client";
-import 'animate.css'
+import "animate.css";
 import { ScaleLoader } from "react-spinners";
 import "animate.css";
 import { Inter } from "next/font/google";
@@ -8,8 +8,9 @@ import { PersistGate } from "redux-persist/lib/integration/react";
 import { persistor } from "@/redux/store";
 import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
+import { Suspense } from "react";
+import { useSelector } from "react-redux";
 const inter = Inter({ subsets: ["latin"] });
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -19,9 +20,11 @@ export default function RootLayout({ children }) {
             loading={<ScaleLoader height={50} width={50} />}
             persistor={persistor}
           >
-            <Header />
-            <main>{children}</main>
-            <Footer />
+            <Suspense fallback={<ScaleLoader height={50} width={50} />}>
+              <Header/>
+              <main>{children}</main>
+              <Footer/>
+            </Suspense>
           </PersistGate>
         </StoreProvider>
       </body>
