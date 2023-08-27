@@ -1,17 +1,15 @@
 "use client";
-import 'animate.css'
+import "animate.css";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React, { useState } from "react";
-import { headerConfig } from "../../../public/Data/configs";
+import { headerConfig } from "../../../out/Data/configs";
 import { CartOverlay } from "./(Cart)/CartOverlay";
 import { useDispatch, useSelector } from "react-redux";
 import { toggle } from "@/redux/features/switch";
 import { StoreLength } from "../utils/store.length";
 
 export const Header = () => {
-  const dispatch = useDispatch();
-
   const HeaderComp = ({ name, url }) => {
     return (
       <li>

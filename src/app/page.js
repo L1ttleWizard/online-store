@@ -1,38 +1,20 @@
-"use client";
+"use client"
 import "./style.css";
-import { useSelector } from "react-redux";
-import { StoreRenderer } from "./Components/StoreRenderer";
-import { Header } from "./Components/Header";
-import { Story } from "./Components/Story";
-import { AfterHeader } from "./Components/AfterHeader";
-import { Magazine } from "./Components/Magazine";
-import { Parallax } from "./Components/Parallax";
-import { LifestyleStories } from "./(LifestyleStories)/LifestyleStories";
-import { Form } from "./Components/Form";
-import { Footer } from "./Components/Footer";
-import { FeaturedMugs } from "./(FeaturedMugs)/FeaturedMugs";
-import { MoreProducts } from "./(MoreProducts)/MoreProducts";
-import { CartOverlay } from "./Components/(Cart)/CartOverlay";
+import { useDispatch, useSelector } from "react-redux";
+
+import React from "react";
+import { Main } from "./Main";
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 
 
 export default function Home() {
-  const cartOpen = useSelector((state)=> state.switch.active);
- 
   return (
-    <div className="">
-      
-       {/* {cartOpen&&<CartOverlay />} */}
-      
-      <AfterHeader />
-      <Story />
-      <FeaturedMugs />
-      <MoreProducts />
-      
-      <Magazine />
-      <Parallax />
-      <LifestyleStories />
-      <Form />
-      
-    </div>
-  );
+    <Main/>
+  )
 }

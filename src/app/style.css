@@ -203,7 +203,7 @@ nav ul {
 /*header section*/
 
 .header-background {
-  background: url(/public/img/header-background.jpg) #000 no-repeat;
+  background: url('../../public/img/header-background.jpg') #000 no-repeat;
   background-size: auto, contain;
   background-position: 50% 100%;
   text-align: center;
