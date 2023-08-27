@@ -170,18 +170,12 @@ export const StoriesConfig = [
     content:
       "It is a paradisematic country, in which roasted parts of sentences fly into your mouth.",
     date: "october 9, 2018",
-    img:{
-      url:"img/life_stories_1.jpg"
-    }
   },
   {
     subtitle: "How long does a cup of coffee keep you awake?",
     content:
       "It is a paradisematic country, in which roasted parts. Vel qui t ad voluptatem.",
     date: "october 9, 2018",
-    img:{
-      url:"img/life_stories_2.jpg"
-    }
   },
   {
     subtitle:
@@ -189,9 +183,6 @@ export const StoriesConfig = [
     content:
       "It is a paradisematic country, in which roasted parts of sentences fly into your mouth.",
     date: "october 9, 2018",
-    img:{
-      url:"img/life_stories_3.jpg"
-    }
   },
 ];
 export const SocialsConfig = {
