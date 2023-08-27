@@ -27,7 +27,7 @@ get(child(dbRef, `StoriesConfig`)).then((snapshot) => {
             data-wow-offset={3}
             key={idx}
           >
-            <a href="#" className={`third-block-story lifestyle-image bg-cover`}>
+            <a href="#" className="third-block-story lifestyle-image">
               <div className="mask" />
               <span className="lifestyle-button">read the full story</span>
             </a>
