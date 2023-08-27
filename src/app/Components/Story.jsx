@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import { storyConfig } from "../../../public/Data/configs";
-console.log(storyConfig);
+
 export const Story = ()=>{
     return (
         <section className="wow slideInUp our_story" data-wow-offset={3}>

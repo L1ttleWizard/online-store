@@ -4,5 +4,9 @@
     "workbench.preferredLightColorTheme": "Monokai",
     "workbench.preferredHighContrastLightColorTheme": "Monokai",
     "totvsLanguageServer.welcomePage": false,
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "cSpell.words": [
+        "onsale",
+        "Xmark"
+    ]
 }
