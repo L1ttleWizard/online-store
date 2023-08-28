@@ -23,7 +23,7 @@ export const Header = () => {
   };
   const [openState, setOpenState] = useState(0);
   return (
-    <header className="header">
+    <header className="header fixed bg-white">
       <div className="">
         <nav className="container">
           <Link href="/">
@@ -32,7 +32,7 @@ export const Header = () => {
           <ul
             className={`lg:flex ${
               !openState ? `hidden` : ""
-            } flex-col lg:flex-row`}
+            } flex-col lg:flex-row `}
           >
             {headerConfig.map((item, idx) => (
               <HeaderComp key={idx} name={item.name} url={item.url} />
@@ -49,7 +49,7 @@ export const Header = () => {
             <span>{StoreLength()}</span>
           </Link>
           <a
-            className="ml-3 block lg:hidden z-50"
+            className="ml-6 block lg:hidden z-50 cursor-pointer"
             onClick={() => {
               setOpenState(!openState);
             }}

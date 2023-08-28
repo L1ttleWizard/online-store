@@ -23,7 +23,7 @@ const Plate = ({ mug }) => {
     >
       {mug.onSale && <span className="mug-sale">On sale.</span>}
       <div className="overlay" />
-      <Image src={mug.img.url} alt={mug.img.alt} />
+      <img src={mug.img.url} alt={mug.img.alt} />
 
       <p className="mug-subtext">{mug.name}</p>
       <div className="flex flex-row justify-center gap-x-3 items-baseline ">
