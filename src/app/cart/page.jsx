@@ -20,7 +20,7 @@ export default function Home() {
     const starCountRef = ref(db, "MoreProductsConfig");
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
-      console.log(data);
+
       setMoreProductsConfig(data);
     });
   }, []);
@@ -30,32 +30,33 @@ export default function Home() {
     const starCountRef = ref(db, "FeaturedMugsConfig");
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
-      console.log(data);
+
       setFeaturedMugsConfig(data);
     });
   }, []);
 
   const allProductsRAW = MoreProductsConfig;
-  console.log(allProductsRAW);
+
   const allProducts = allProductsRAW.reduce((accumulator, currentValue) => {
     if (!accumulator.includes(currentValue)) {
       accumulator.push(currentValue);
     }
     return accumulator;
   }, []);
-  console.log(allProducts);
+
 
   const cartItems = useSelector((state) => state.cart);
   const filteredArray = allProducts.filter((obj) =>
     cartItems.hasOwnProperty(obj.id)
   );
 
+
   const finalCost = filteredArray.reduce((accumulator, item) => {
     return accumulator + item.price * cartItems[item.id];
   }, 0);
 
   const rawCost = filteredArray.reduce((accumulator, item) => {
-    return item.salePrice !== null
+    return item.salePrice !== 'null'||null
       ? accumulator + item.salePrice * cartItems[item.id]
       : accumulator + item.price * cartItems[item.id];
   }, 0);
