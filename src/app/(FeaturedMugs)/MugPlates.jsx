@@ -1,10 +1,15 @@
 import React from "react";
 import { FaXmark } from "react-icons/fa6";
-import { featuredMugsConfig } from "../../../public/Data/configs";
+// import { featuredMugsConfig } from "../../../public/Data/configs";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProductAmount } from "@/redux/features/cart/selector";
 import { cartActions } from "@/redux/features/cart";
 import Image from "next/image";
+import { useState } from "react";
+import { useEffect } from "react";
+import { useLayoutEffect } from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { app } from "../firebase/config";
 
 const Plate = ({ mug }) => {
   const PRODUCT_ID = mug.id;
@@ -20,7 +25,6 @@ const Plate = ({ mug }) => {
         mug.onSale ? "standard" : "onsale"
       }--big wow slideInUp mb-3`}
       data-wow-offset={3}
-      
     >
       {mug.onSale && <span className="mug-sale">On sale.</span>}
       <div className="overlay" />
@@ -74,7 +78,17 @@ const Plate = ({ mug }) => {
 };
 
 export const MugPlates = () => {
+  const [featuredMugsConfig, setFeaturedMugsConfig] = useState([]);
+  useLayoutEffect(() => {
+    const db = getDatabase(app);
+    const starCountRef = ref(db, "FeaturedMugsConfig");
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      console.log(data);
+      setFeaturedMugsConfig(data);
+    });
+  }, []);
   return featuredMugsConfig.map((mug, idx) => {
-    return <Plate key={mug.id} mug={mug}/>
+    return <Plate key={mug.id} mug={mug} />;
   });
 };

@@ -23,7 +23,7 @@ export const Header = () => {
   };
   const [openState, setOpenState] = useState(0);
   return (
-    <header className="header fixed bg-white">
+    <header className="header bg-white">
       <div className="">
         <nav className="container">
           <Link href="/">
