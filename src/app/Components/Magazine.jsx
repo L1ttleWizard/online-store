@@ -13,7 +13,7 @@ export const Magazine = () => {
         <div className="outer-flex mb-11">
           <div className="grid-cols-2  grid gap-3">
             {MagazineConfig.map((img, idx) => {
-              return <img className=" w-64 " key={idx} src={img.url} alt={img.alt}></img>;
+              return <img className=" w-64 rounded-lg " key={idx} src={img.url} alt={img.alt}></img>;
             })}
           </div>
           <div className="content-flex ml-3">
@@ -25,7 +25,7 @@ export const Magazine = () => {
                 <br />
                 Designed to fit your life.
               </p>
-              <a className="black-button" href="#">
+              <a className="black-button rounded-xl" href="#">
                 start shopping
               </a>
             </div>

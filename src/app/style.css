@@ -323,8 +323,8 @@ nav ul {
 
 .add-cart {
   text-decoration: none;
-  border: 3px solid rgb(243, 243, 23);
-  background-color: yellow;
+  border: 3px solid #d6b4a9;
+  background-color: #E3CFC9;
   padding: 0 5px;
   border-radius: 7px;
   cursor: pointer;
@@ -622,7 +622,7 @@ ul {
 .footer-title {
   margin: 0;
   display: block;
-  text-align: left;
+  text-align: center  ;
 }
 
 .footer-colunm li a {

@@ -7,14 +7,14 @@ export const Form = () => {
       <p className="coffee-updates">Coffee Updates</p>
       <div className="form-flex">
         <input
-          className="input"
+          className="input rounded-xlp"
           type="email"
           placeholder="customer@coffeestyle.io"
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="off"
         />
-        <button className="subscribe-button">subscribe</button>&gt;
+        <button className="subscribe-button rounded-xl">subscribe</button>&gt;
       </div>
     </section>
   );

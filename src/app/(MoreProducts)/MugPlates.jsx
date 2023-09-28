@@ -27,7 +27,7 @@ const Plate = ({ mug }) => {
     >
       {mug.onSale && <span className="mug-sale">On sale.</span>}
       <div className="overlay" />
-      <img src={mug.img.url} alt={mug.img.alt} />
+      <img src={mug.img.url} alt={mug.img.alt}  className=" rounded-xl"/>
 
       <p className="mug-subtext">{mug.name}</p>
       <div className="flex flex-row justify-center gap-x-3 items-baseline ">
@@ -47,7 +47,7 @@ const Plate = ({ mug }) => {
             </button>
           )}
           {Boolean(productAmount) && (
-            <div className=" bg-gray flex flex-row justify-between w-28 px-5 items-center mt-auto mb-auto rounded-lg">
+            <div className=" bg-gray flex flex-row justify-between w-28 px-5  py-1 items-center mt-auto mb-auto rounded-lg">
               <button
                 className=""
                 onClick={() => dispatch(cartActions.decrement(PRODUCT_ID))}
