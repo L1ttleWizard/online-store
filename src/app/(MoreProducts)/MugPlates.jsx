@@ -1,14 +1,9 @@
-"use client";
-import { FaXmark } from "react-icons/fa6";
+"use client"
 import React from "react";
 // import { MoreProductsConfig } from "../../../public/Data/configs";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProductAmount } from "@/redux/features/cart/selector";
 import { cartActions } from "@/redux/features/cart";
-import { useEffect } from "react";
-import { getDatabase, ref, child, get } from "firebase/database";
-import { useState } from "react";
-
 const Plate = ({ mug }) => {
   const PRODUCT_ID = mug.id;
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -23,11 +18,10 @@ const Plate = ({ mug }) => {
         mug.onSale ? "standard" : "onsale"
       }--common wow slideInUp mb-5 w-full lg:w-2/5`}
       data-wow-offset={3}
-      
     >
       {mug.onSale && <span className="mug-sale">On sale.</span>}
       <div className="overlay" />
-      <img src={mug.img.url} alt={mug.img.alt} />
+      <img src={mug.img.url} alt={mug.img.alt}  className=" rounded-xl"/>
 
       <p className="mug-subtext">{mug.name}</p>
       <div className="flex flex-row justify-center gap-x-3 items-baseline ">
@@ -47,7 +41,7 @@ const Plate = ({ mug }) => {
             </button>
           )}
           {Boolean(productAmount) && (
-            <div className=" bg-gray flex flex-row justify-between w-28 px-5 items-center mt-auto mb-auto rounded-lg">
+            <div className=" bg-gray flex flex-row justify-between w-28 px-5  py-1 items-center mt-auto mb-auto rounded-lg">
               <button
                 className=""
                 onClick={() => dispatch(cartActions.decrement(PRODUCT_ID))}
@@ -68,26 +62,9 @@ const Plate = ({ mug }) => {
   );
 };
 
-export const MugPlates = () => {
-  const [MoreProductsConfig, setMoreProductsConfig] = useState([]);
-  useEffect(() => {
-    const dbRef = ref(getDatabase());
-    get(child(dbRef, `MoreProductsConfig`))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          console.log(snapshot.val());
-          setMoreProductsConfig(Object.values(snapshot.val()));
-        } else {
-          console.log("No data available");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
-  return MoreProductsConfig.map((mug, idx) => {
-    return(<Plate key={mug.id} mug={mug}/>)
+export const MugPlates = ({MoreProductsConfig}) => {
   
+  return MoreProductsConfig.map((mug, idx) => {
+    return <Plate mug={mug} key={mug.id} />;
   });
 };

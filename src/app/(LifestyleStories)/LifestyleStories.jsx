@@ -1,7 +1,10 @@
 import React from "react";
 import { Stories } from "./Stories";
+import { child, get, getDatabase, ref } from "firebase/database";
+import { app } from "../firebase/config";
 
-export const LifestyleStories = () => {
+
+export const LifestyleStories = ({config}) => {
   return (
     <section className="lifestyle-stories">
       <section className="lifestyle-stories">
@@ -10,7 +13,7 @@ export const LifestyleStories = () => {
             behind, lifestyle stories
           </h2>
           <div className="lifestyle-inner">
-            <Stories />
+            <Stories storiesConfig = {config}  />
           </div>
         </div>
       </section>

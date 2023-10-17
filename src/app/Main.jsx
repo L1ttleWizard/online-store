@@ -13,6 +13,7 @@ import { ScaleLoader } from "react-spinners";
 import { useEffect } from "react";
 import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
+import { Example } from "./Components/Example";
 
 export const Main = () => {
   const dispatch = useDispatch();
@@ -23,15 +24,8 @@ export const Main = () => {
   }, [loading]);
 
   return (
-    <>
-      <AfterHeader />
-      <Story />
-      <FeaturedMugs />
-      <MoreProducts />
-      <Magazine />
-      <Parallax />
-      <LifestyleStories />
-      <Form />
-    </>
+    <div>df</div>
+   
+    
   );
 };

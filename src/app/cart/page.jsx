@@ -2,33 +2,61 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { CartItem } from "./CartItem";
-import {
-  MoreProductsConfig,
-  featuredMugsConfig,
-} from "../../../public/Data/configs";
+// import {
+//   MoreProductsConfig,
+//   featuredMugsConfig,
+// } from "../../../public/Data/configs";
 import { UseSelector } from "react-redux/es/hooks/useSelector";
 import { selectProductAmount } from "@/redux/features/cart/selector";
-
-const allProductsRAW = MoreProductsConfig.concat(featuredMugsConfig);
-const allProducts = allProductsRAW.reduce((accumulator, currentValue) => {
-  if (!accumulator.includes(currentValue)) {
-    accumulator.push(currentValue);
-  }
-  return accumulator;
-}, []);
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useState } from "react";
+import { useLayoutEffect } from "react";
+import { app } from "../firebase/config";
 
 export default function Home() {
+  const [MoreProductsConfig, setMoreProductsConfig] = useState([]);
+  useLayoutEffect(() => {
+    const db = getDatabase(app);
+    const starCountRef = ref(db, "MoreProductsConfig");
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+
+      setMoreProductsConfig(data);
+    });
+  }, []);
+  const [featuredMugsConfig, setFeaturedMugsConfig] = useState([]);
+  useLayoutEffect(() => {
+    const db = getDatabase(app);
+    const starCountRef = ref(db, "FeaturedMugsConfig");
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+
+      setFeaturedMugsConfig(data);
+    });
+  }, []);
+
+  const allProductsRAW = MoreProductsConfig;
+
+  const allProducts = allProductsRAW.reduce((accumulator, currentValue) => {
+    if (!accumulator.includes(currentValue)) {
+      accumulator.push(currentValue);
+    }
+    return accumulator;
+  }, []);
+
+
   const cartItems = useSelector((state) => state.cart);
   const filteredArray = allProducts.filter((obj) =>
     cartItems.hasOwnProperty(obj.id)
   );
+
 
   const finalCost = filteredArray.reduce((accumulator, item) => {
     return accumulator + item.price * cartItems[item.id];
   }, 0);
 
   const rawCost = filteredArray.reduce((accumulator, item) => {
-    return item.salePrice !== null
+    return item.salePrice !== 'null'||null
       ? accumulator + item.salePrice * cartItems[item.id]
       : accumulator + item.price * cartItems[item.id];
   }, 0);

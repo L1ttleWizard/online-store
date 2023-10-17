@@ -1,20 +1,27 @@
-"use client"
 import "./style.css";
-import { useDispatch, useSelector } from "react-redux";
-
-import React from "react";
-import { Main } from "./Main";
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-
-
-export default function Home() {
+import { Story } from "./Components/Story";
+import { AfterHeader } from "./Components/AfterHeader";
+import { Magazine } from "./Components/Magazine";
+import { Parallax } from "./Components/Parallax";
+import { LifestyleStories } from "./(LifestyleStories)/LifestyleStories";
+import { Form } from "./Components/Form";
+import { FeaturedMugs } from "./(FeaturedMugs)/FeaturedMugs";
+import { MoreProducts } from "./(MoreProducts)/MoreProducts";
+import { StoryConfigComponent } from "./Components/StoryConfigComp";
+import { FeaturedMugsConfigComp } from "./(FeaturedMugs)/FeaturedMugsConfigComp";
+import { MoreProductsConfigComp } from "./(MoreProducts)/MoreProductsConfigComp";
+import { LifestyleConfigComp } from "./(LifestyleStories)/LifestyleStoriesConfigComp";
+export default async function Home() {
   return (
-    <Main/>
-  )
+    <div>
+      <AfterHeader />
+      <StoryConfigComponent />
+      <FeaturedMugsConfigComp/>
+      <MoreProductsConfigComp />
+      <Magazine />  
+      <Parallax />
+      <LifestyleConfigComp/>
+      <Form />
+    </div>
+  );
 }

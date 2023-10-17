@@ -20,7 +20,7 @@ export const Header = () => {
   };
   const [openState, setOpenState] = useState(0);
   return (
-    <header className="header">
+    <header className="header bg-white">
       <div className="">
         <nav className="container">
           <Link href="/">
@@ -46,7 +46,7 @@ export const Header = () => {
             <span>{StoreLength()}</span>
           </Link>
           <a
-            className="ml-3 block lg:hidden z-50"
+            className="ml-6 block lg:hidden z-50 cursor-pointer"
             onClick={() => {
               setOpenState(!openState);
             }}

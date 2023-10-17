@@ -1,27 +1,8 @@
-"use client";
-import { getDatabase, ref, child, get } from "firebase/database";
+"use client"
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-// import { storyConfig } from "../../../public/Data/configs";
 
-export const Story = () => {
-    const [storyConfig,setStoryConfig] = useState([]);
-  useEffect(() => {
-    const dbRef = ref(getDatabase());
-    get(child(dbRef, "StoryConfig"))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          console.log(snapshot.val());
-          setStoryConfig(snapshot.val());
-        } else {
-          console.log("No data available");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  },[]);
+export const Story = ({storyConfig}) => {
+
   return (
     <section className="wow slideInUp our_story" data-wow-offset={3}>
       <div className="container" style={{ textAlign: "center" }}>
