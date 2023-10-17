@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React, { useState } from "react";
-import { headerConfig } from "../../../out/Data/configs";
+import { headerConfig } from "../../../public/Data/configs";
 import { CartOverlay } from "./(Cart)/CartOverlay";
 import { useDispatch, useSelector } from "react-redux";
 import { toggle } from "@/redux/features/switch";
