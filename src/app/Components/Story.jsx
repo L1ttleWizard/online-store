@@ -1,22 +1,7 @@
-import React, { useLayoutEffect } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-import { getDatabase, ref, onValue } from "firebase/database";
-import { app } from "../firebase/config";
-import { data } from "autoprefixer";
-// import { storyConfig } from "../../../public/Data/configs";
+"use client"
+import React from "react";
 
-export const Story = () => {
-  const [storyConfig, setStoryConfig] = useState([]);
-  useLayoutEffect(() => {
-    const db = getDatabase();
-    const starCountRef = ref(db, "StoryConfig");
-    onValue(starCountRef, (snapshot) => {
-      const data = snapshot.val();
-      console.log(data);
-      setStoryConfig(data);
-    });
-  }, [data]);
+export const Story = ({storyConfig}) => {
 
   return (
     <section className="wow slideInUp our_story" data-wow-offset={3}>

@@ -1,23 +1,14 @@
+"use client"
 import React from "react";
-import { StoriesConfig } from "../../../public/Data/configs";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { useState } from "react";
 import { useLayoutEffect } from "react";
 import { app } from "../firebase/config";
-export const Stories = () => {
-  const [StoriesConfig, setStoriesConfig] = useState([]);
-  useLayoutEffect(() => {
-    const db = getDatabase(app);
-    const starCountRef = ref(db, "StoriesConfig");
-    onValue(starCountRef, (snapshot) => {
-      const data = snapshot.val();
-      console.log(data);
-      setStoriesConfig(data);
-    });
-  }, []);
+export const Stories = ({storiesConfig}) => {
+  
   return (
     <>
-      {StoriesConfig.map((story, idx) => {
+      {storiesConfig.map((story, idx) => {
         return (
           <div
             className="lifestyle-item wow slideInUp"

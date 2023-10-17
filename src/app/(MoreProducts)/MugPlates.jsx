@@ -1,15 +1,9 @@
-import { FaXmark } from "react-icons/fa6";
+"use client"
 import React from "react";
 // import { MoreProductsConfig } from "../../../public/Data/configs";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProductAmount } from "@/redux/features/cart/selector";
 import { cartActions } from "@/redux/features/cart";
-import Image from "next/image";
-import { useLayoutEffect } from "react";
-import { useState } from "react";
-import { getDatabase, ref, onValue } from "firebase/database";
-import { app } from "../firebase/config";
-
 const Plate = ({ mug }) => {
   const PRODUCT_ID = mug.id;
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -68,17 +62,8 @@ const Plate = ({ mug }) => {
   );
 };
 
-export const MugPlates = () => {
-  const [MoreProductsConfig, setMoreProductsConfig] = useState([]);
-  useLayoutEffect(() => {
-    const db = getDatabase(app);
-    const starCountRef = ref(db, "MoreProductsConfig");
-    onValue(starCountRef, (snapshot) => {
-      const data = snapshot.val();
-      console.log(data);
-      setMoreProductsConfig(data);
-    });
-  }, []);
+export const MugPlates = ({MoreProductsConfig}) => {
+  
   return MoreProductsConfig.map((mug, idx) => {
     return <Plate mug={mug} key={mug.id} />;
   });

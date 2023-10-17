@@ -1,38 +1,27 @@
-"use client";
 import "./style.css";
-import { useSelector } from "react-redux";
-import { StoreRenderer } from "./Components/StoreRenderer";
-import { Header } from "./Components/Header";
 import { Story } from "./Components/Story";
 import { AfterHeader } from "./Components/AfterHeader";
 import { Magazine } from "./Components/Magazine";
 import { Parallax } from "./Components/Parallax";
 import { LifestyleStories } from "./(LifestyleStories)/LifestyleStories";
 import { Form } from "./Components/Form";
-import { Footer } from "./Components/Footer";
 import { FeaturedMugs } from "./(FeaturedMugs)/FeaturedMugs";
 import { MoreProducts } from "./(MoreProducts)/MoreProducts";
-import { CartOverlay } from "./Components/(Cart)/CartOverlay";
-
-
-export default function Home() {
-  const cartOpen = useSelector((state)=> state.switch.active);
- 
+import { StoryConfigComponent } from "./Components/StoryConfigComp";
+import { FeaturedMugsConfigComp } from "./(FeaturedMugs)/FeaturedMugsConfigComp";
+import { MoreProductsConfigComp } from "./(MoreProducts)/MoreProductsConfigComp";
+import { LifestyleConfigComp } from "./(LifestyleStories)/LifestyleStoriesConfigComp";
+export default async function Home() {
   return (
-    <div className="">
-      
-       {/* {cartOpen&&<CartOverlay />} */}
-      
+    <div>
       <AfterHeader />
-      <Story />
-      <FeaturedMugs />
-      <MoreProducts />
-      
-      <Magazine />
+      <StoryConfigComponent />
+      <FeaturedMugsConfigComp/>
+      <MoreProductsConfigComp />
+      <Magazine />  
       <Parallax />
-      <LifestyleStories />
+      <LifestyleConfigComp/>
       <Form />
-      
     </div>
   );
 }
