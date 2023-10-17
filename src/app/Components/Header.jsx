@@ -2,12 +2,36 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React, { useState } from "react";
-import { headerConfig } from "../../../out/Data/configs";
 import { CartOverlay } from "./(Cart)/CartOverlay";
 import { useDispatch, useSelector } from "react-redux";
 import { toggle } from "@/redux/features/switch";
 import { StoreLength } from "../utils/store.length";
-
+ const headerConfig = [
+  {
+    name: "home",
+    url: "/",
+  },
+  {
+    name: "products",
+    url: "/#products",
+  },
+  {
+    name: "blog",
+    url: "#",
+  },
+  {
+    name: "about",
+    url: "#",
+  },
+  {
+    name: "contact",
+    url: "#",
+  },
+  {
+    name: "styleguide",
+    url: "#",
+  },
+];
 export const Header = () => {
   const HeaderComp = ({ name, url }) => {
     return (
