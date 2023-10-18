@@ -25,9 +25,6 @@
 //   },
 // ];
 "use client";
-import { getDatabase, ref, child, get } from "firebase/database";
-import { loaded } from "@/redux/features/loading";
-import app from "@/firebase/config";
 
 
 export const headerConfig = [
