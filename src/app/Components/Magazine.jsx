@@ -1,8 +1,11 @@
 
 
 import React from "react";
-import { MagazineConfig } from "../../../public/Data/configs";
-
+ const MagazineConfig = [
+  { url: "img/magazine big image.jpg", alt: "book" },
+  { url: "img/magazine small image 1.jpg", alt: "mug" },
+  { url: "img/magazine small image 2.jpg", alt: "mug-spoon" },
+];
 export const Magazine = () => {
   return (
     <section className="wow slideInUp magazine" data-wow-offset={3}>
