@@ -1,0 +1,205 @@
+[debug] [2023-08-26T23:33:10.673Z] ----------------------------------------------------------------------
+[debug] [2023-08-26T23:33:10.675Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\andrw\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-08-26T23:33:10.676Z] CLI Version:   12.5.2
+[debug] [2023-08-26T23:33:10.676Z] Platform:      win32
+[debug] [2023-08-26T23:33:10.676Z] Node Version:  v18.14.1
+[debug] [2023-08-26T23:33:10.677Z] Time:          Sun Aug 27 2023 02:33:10 GMT+0300 (Москва, стандартное время)
+[debug] [2023-08-26T23:33:10.677Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-26T23:33:10.742Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-26T23:33:10.743Z] > authorizing via signed-in user (andrwyandreev2005@gmail.com)
+[debug] [2023-08-26T23:33:10.743Z] [iam] checking project online-store-a59ef for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2023-08-26T23:33:10.745Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-store-a59ef:testIamPermissions [none]
+[debug] [2023-08-26T23:33:10.745Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-store-a59ef:testIamPermissions x-goog-quota-user=projects/online-store-a59ef
+[debug] [2023-08-26T23:33:10.746Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-store-a59ef:testIamPermissions {"permissions":["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}
+[debug] [2023-08-26T23:33:11.677Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-store-a59ef:testIamPermissions 200
+[debug] [2023-08-26T23:33:11.677Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-store-a59ef:testIamPermissions {"permissions":["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}
+[debug] [2023-08-26T23:33:11.679Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/online-store-a59ef [none]
+[debug] [2023-08-26T23:33:12.036Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/online-store-a59ef 200
+[debug] [2023-08-26T23:33:12.037Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/online-store-a59ef {"projectId":"online-store-a59ef","projectNumber":"519718256661","displayName":"online-store","name":"projects/online-store-a59ef","resources":{"hostingSite":"online-store-a59ef","realtimeDatabaseInstance":"online-store-a59ef-default-rtdb"},"state":"ACTIVE","etag":"1_0b0e0796-8144-4aa0-8ec2-94fe1a43ab00"}
+[debug] [2023-08-26T23:33:12.037Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/online-store-a59ef [none]
+[debug] [2023-08-26T23:33:12.392Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/online-store-a59ef 200
+[debug] [2023-08-26T23:33:12.392Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/online-store-a59ef {"projectId":"online-store-a59ef","projectNumber":"519718256661","displayName":"online-store","name":"projects/online-store-a59ef","resources":{"hostingSite":"online-store-a59ef","realtimeDatabaseInstance":"online-store-a59ef-default-rtdb"},"state":"ACTIVE","etag":"1_0b0e0796-8144-4aa0-8ec2-94fe1a43ab00"}
+[debug] [2023-08-26T23:33:17.172Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/online-store-a59ef/sites pageToken=&pageSize=10
+[debug] [2023-08-26T23:33:18.317Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/online-store-a59ef/sites 200
+[debug] [2023-08-26T23:33:18.317Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/online-store-a59ef/sites {"sites":[{"name":"projects/online-store-a59ef/sites/online-store-a59ef","defaultUrl":"https://online-store-a59ef.web.app","appId":"1:519718256661:web:ab050f15f5d5da1a48ce1c","type":"DEFAULT_SITE"}]}
+[debug] [2023-08-26T23:33:18.318Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:519718256661:web:ab050f15f5d5da1a48ce1c/config [none]
+[debug] [2023-08-26T23:33:19.247Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:519718256661:web:ab050f15f5d5da1a48ce1c/config 200
+[debug] [2023-08-26T23:33:19.248Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:519718256661:web:ab050f15f5d5da1a48ce1c/config {"projectId":"online-store-a59ef","appId":"1:519718256661:web:ab050f15f5d5da1a48ce1c","databaseURL":"https://online-store-a59ef-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"online-store-a59ef.appspot.com","apiKey":"AIzaSyBg6ScXAAjQQOFJZzvGhJ1-YlUetAzBA5A","authDomain":"online-store-a59ef.firebaseapp.com","messagingSenderId":"519718256661","measurementId":"G-4VHPWPQ6QL"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info] - info Creating an optimized production build...
+
+[info] uncaughtException [Error: EPERM: operation not permitted, open 'C:\Users\andrw\OneDrive\Projects\online-store\.next\trace'] {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'C:\\Users\\andrw\\OneDrive\\Projects\\online-store\\.next\\trace'
+}
+
+[debug] [2023-08-26T23:33:37.472Z] Error: ENOENT: no such file or directory, open 'C:\Users\andrw\OneDrive\Projects\online-store\.next\server\middleware-manifest.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-08-26T23:35:36.778Z] ----------------------------------------------------------------------
+[debug] [2023-08-26T23:35:36.779Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\andrw\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-08-26T23:35:36.780Z] CLI Version:   12.5.2
+[debug] [2023-08-26T23:35:36.780Z] Platform:      win32
+[debug] [2023-08-26T23:35:36.780Z] Node Version:  v18.14.1
+[debug] [2023-08-26T23:35:36.781Z] Time:          Sun Aug 27 2023 02:35:36 GMT+0300 (Москва, стандартное время)
+[debug] [2023-08-26T23:35:36.781Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-26T23:35:36.825Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-26T23:35:36.826Z] > authorizing via signed-in user (andrwyandreev2005@gmail.com)
+[debug] [2023-08-26T23:35:36.826Z] [iam] checking project online-store-a59ef for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2023-08-26T23:35:36.828Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-store-a59ef:testIamPermissions [none]
+[debug] [2023-08-26T23:35:36.828Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-store-a59ef:testIamPermissions x-goog-quota-user=projects/online-store-a59ef
+[debug] [2023-08-26T23:35:36.828Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-store-a59ef:testIamPermissions {"permissions":["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}
+[debug] [2023-08-26T23:35:37.757Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-store-a59ef:testIamPermissions 200
+[debug] [2023-08-26T23:35:37.757Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/online-store-a59ef:testIamPermissions {"permissions":["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}
+[debug] [2023-08-26T23:35:37.758Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/online-store-a59ef [none]
+[debug] [2023-08-26T23:35:38.120Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/online-store-a59ef 200
+[debug] [2023-08-26T23:35:38.120Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/online-store-a59ef {"projectId":"online-store-a59ef","projectNumber":"519718256661","displayName":"online-store","name":"projects/online-store-a59ef","resources":{"hostingSite":"online-store-a59ef","realtimeDatabaseInstance":"online-store-a59ef-default-rtdb"},"state":"ACTIVE","etag":"1_0b0e0796-8144-4aa0-8ec2-94fe1a43ab00"}
+[debug] [2023-08-26T23:35:38.120Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/online-store-a59ef [none]
+[debug] [2023-08-26T23:35:38.550Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/online-store-a59ef 200
+[debug] [2023-08-26T23:35:38.550Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/online-store-a59ef {"projectId":"online-store-a59ef","projectNumber":"519718256661","displayName":"online-store","name":"projects/online-store-a59ef","resources":{"hostingSite":"online-store-a59ef","realtimeDatabaseInstance":"online-store-a59ef-default-rtdb"},"state":"ACTIVE","etag":"1_0b0e0796-8144-4aa0-8ec2-94fe1a43ab00"}
+[debug] [2023-08-26T23:35:42.529Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/online-store-a59ef/sites pageToken=&pageSize=10
+[debug] [2023-08-26T23:35:43.594Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/online-store-a59ef/sites 200
+[debug] [2023-08-26T23:35:43.594Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/online-store-a59ef/sites {"sites":[{"name":"projects/online-store-a59ef/sites/online-store-a59ef","defaultUrl":"https://online-store-a59ef.web.app","appId":"1:519718256661:web:ab050f15f5d5da1a48ce1c","type":"DEFAULT_SITE"}]}
+[debug] [2023-08-26T23:35:43.594Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:519718256661:web:ab050f15f5d5da1a48ce1c/config [none]
+[debug] [2023-08-26T23:35:44.569Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:519718256661:web:ab050f15f5d5da1a48ce1c/config 200
+[debug] [2023-08-26T23:35:44.569Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:519718256661:web:ab050f15f5d5da1a48ce1c/config {"projectId":"online-store-a59ef","appId":"1:519718256661:web:ab050f15f5d5da1a48ce1c","databaseURL":"https://online-store-a59ef-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"online-store-a59ef.appspot.com","apiKey":"AIzaSyBg6ScXAAjQQOFJZzvGhJ1-YlUetAzBA5A","authDomain":"online-store-a59ef.firebaseapp.com","messagingSenderId":"519718256661","measurementId":"G-4VHPWPQ6QL"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info] - info Creating an optimized production build...
+
+[info] - info Compiled successfully
+
+[info] - info Linting and checking validity of types...
+
+[info] 
+./src/app/(FeaturedMugs)/MugPlates.jsx
+29:7  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/(MoreProducts)/MugPlates.jsx
+30:7  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/Components/(Cart)/CartEmpty.jsx
+6:7  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+6:7  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+
+./src/app/Components/(Cart)/CartPlates.jsx
+45:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/Components/CartItem.jsx
+25:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/Components/Footer.jsx
+10:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/Components/Header.jsx
+55:13  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+
+./src/app/Components/Magazine.jsx
+16:22  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/Components/StoreRenderer.jsx
+19:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+[info] - info Collecting page data...
+
+[info] - info Generating static pages (0/5)
+
+[info] - info Generating static pages (1/5)
+
+[info] - info Generating static pages (2/5)
+
+[info] - info Generating static pages (3/5)
+
+[info] hello
+
+[info] [2023-08-26T23:36:04.427Z]  @firebase/analytics: Analytics: Firebase Analytics is not supported in this environment. Wrap initialization of analytics in analytics.isSupported() to prevent initialization in unsupported environments. Details: (1) Cookies are not available. (analytics/invalid-analytics-context).
+
+[info] ReferenceError: window is not defined
+    at getOrCreateDataLayer (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33025:23)
+    at factory (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33886:9)
+    at Component.instanceFactory (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:34093:16)
+    at Provider.getOrInitializeService (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:28862:39)
+    at Provider.initialize (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:28806:31)
+    at initializeAnalytics (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33935:49)
+    at getAnalytics (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33914:12)
+    at 6022 (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\995.js:74:58)
+    at __webpack_require__ (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\webpack-runtime.js:25:43)
+    at 1812 (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\995.js:1094:78)
+
+[info] hello
+
+[info] [2023-08-26T23:36:04.442Z]  @firebase/analytics: Analytics: Firebase Analytics is not supported in this environment. Wrap initialization of analytics in analytics.isSupported() to prevent initialization in unsupported environments. Details: (1) Cookies are not available. (analytics/invalid-analytics-context).
+
+[info] ReferenceError: window is not defined
+    at getOrCreateDataLayer (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33025:23)
+    at factory (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33886:9)
+    at Component.instanceFactory (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:34093:16)
+    at Provider.getOrInitializeService (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:28862:39)
+    at Provider.initialize (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:28806:31)
+    at initializeAnalytics (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33935:49)
+    at getAnalytics (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33914:12)
+    at 6022 (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\995.js:74:58)
+    at __webpack_require__ (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\webpack-runtime.js:25:43)
+    at 2966 (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\app\page.js:493:15)
+
+[info] 
+Error occurred prerendering page "/cart". Read more: https://nextjs.org/docs/messages/prerender-error
+ReferenceError: window is not defined
+    at getOrCreateDataLayer (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33025:23)
+    at factory (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33886:9)
+    at Component.instanceFactory (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:34093:16)
+    at Provider.getOrInitializeService (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:28862:39)
+    at Provider.initialize (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:28806:31)
+    at initializeAnalytics (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33935:49)
+    at getAnalytics (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33914:12)
+    at 6022 (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\995.js:74:58)
+    at __webpack_require__ (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\webpack-runtime.js:25:43)
+    at 1812 (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\995.js:1094:78)
+
+[info] 
+Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+ReferenceError: window is not defined
+    at getOrCreateDataLayer (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33025:23)
+    at factory (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33886:9)
+    at Component.instanceFactory (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:34093:16)
+    at Provider.getOrInitializeService (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:28862:39)
+    at Provider.initialize (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:28806:31)
+    at initializeAnalytics (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33935:49)
+    at getAnalytics (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\473.js:33914:12)
+    at 6022 (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\chunks\995.js:74:58)
+    at __webpack_require__ (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\webpack-runtime.js:25:43)
+    at 2966 (C:\Users\andrw\OneDrive\Projects\online-store\.next\server\app\page.js:493:15)
+
+[info] - info Generating static pages (5/5)
+
+[info] 
+> Export encountered errors on following paths:
+	/cart/page: /cart
+	/page: /
+
+[debug] [2023-08-26T23:36:07.480Z] Error: ENOENT: no such file or directory, open 'C:\Users\andrw\OneDrive\Projects\online-store\.next\export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.

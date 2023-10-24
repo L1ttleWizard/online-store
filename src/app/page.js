@@ -13,11 +13,11 @@ export default async function Home() {
     <div>
       <AfterHeader />
       <StoryConfigComponent />
-      <FeaturedMugsConfigComp/>
-      <MoreProductsConfigComp />
+      {/* <FeaturedMugsConfigComp/> */}
+      {/* <MoreProductsConfigComp /> */}
       <Magazine />  
       <Parallax />
-      <LifestyleConfigComp/>
+      {/* <LifestyleConfigComp/> */}
       <Form />
     </div>
   );
