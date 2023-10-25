@@ -1,17 +1,16 @@
-import React from "react";  
-import { child, get, getDatabase, ref } from "firebase/database";
-import { app } from "../firebase/config";
+import React from "react";
 import { LifestyleStories } from "./LifestyleStories";
-
+import { getDocs, collection } from "firebase/firestore";
+import { database } from "@/firebase/config";
 
 export async function LifestyleConfigComp() {
-  const dbRef = ref(getDatabase(app));
-  const snapshot = await get(child(dbRef, "StoriesConfig"));
-
-  if (snapshot.exists()) {
-    const data = snapshot.val();
-    return <LifestyleStories config={data} />;
-  } else {
-    return <div>No data available</div>;
-  }
+  let data = {};
+  const querySnapshot = await getDocs(collection(database, "StoriesConfig"));
+  return (
+    <LifestyleStories
+      config={querySnapshot.docs.map((doc) =>
+        Object.assign(doc.data(), { id: doc.id })
+      )}
+    />
+  );
 }
