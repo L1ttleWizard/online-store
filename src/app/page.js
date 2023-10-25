@@ -15,7 +15,7 @@ export default async function Home() {
       <StoryConfigComponent />
       {/* <FeaturedMugsConfigComp/> */}
       {/* <MoreProductsConfigComp /> */}
-      <Magazine />  
+      <Magazine />
       <Parallax />
       {/* <LifestyleConfigComp/> */}
       <Form />

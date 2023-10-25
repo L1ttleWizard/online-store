@@ -10,7 +10,7 @@ export async function StoryConfigComponent() {
   const querySnapshot = await getDocs(collection(database, "StoryConfig"));
   querySnapshot.forEach((doc) => {
     const d= doc.data();
-    console.log(d);
+    console.log(d.content);
     // return <Story storyConfig={doc.data()} />;
     return (
       <>
