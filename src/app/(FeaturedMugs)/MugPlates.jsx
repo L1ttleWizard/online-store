@@ -4,14 +4,21 @@ import { FaXmark } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProductAmount } from "@/redux/features/cart/selector";
 import { cartActions } from "@/redux/features/cart";
+import {getStorage,ref} from 'firebase/storage'
+import { app } from "../firebase/config";
 
-export const MugPlates = ({featuredMugsConfig}) => {
+const storage = getStorage(app);
+const storageRef = ref(storage);
+const imagesRef =  ref(storageRef,'img');
+
+export const  MugPlates = ({featuredMugsConfig}) => {
     return featuredMugsConfig.map((mug, idx) => {
       return <Plate key={mug.id} mug={mug} />;
     });
   };
 
 const Plate = ({ mug }) => {
+  console.log(ref(imagesRef,'winter style mug.jpg'));
   const PRODUCT_ID = mug.id;
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const dispatch = useDispatch();
@@ -28,7 +35,7 @@ const Plate = ({ mug }) => {
     >
       {mug.onSale && <span className="mug-sale">On sale.</span>}
       <div className="overlay" />
-      <img src={mug.img.url} alt={mug.img.alt} className="rounded-xl" />
+      <img src={ref(imagesRef,`${mug.url}`).fullPath} alt={mug.alt} className="rounded-xl" />
       <p className="mug-subtext">{mug.name}</p>
       <div className="cost-wrapper">
         <span className={`cost-standard ${mug.onSale && "sale"}`}>

@@ -4,6 +4,14 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProductAmount } from "@/redux/features/cart/selector";
 import { cartActions } from "@/redux/features/cart";
+import { FaXmark } from "react-icons/fa6";
+import {getStorage,ref} from 'firebase/storage'
+import { app } from "../firebase/config";
+
+const storage = getStorage(app);
+const storageRef = ref(storage);
+const imagesRef =  ref(storageRef,'img');
+
 const Plate = ({ mug }) => {
   const PRODUCT_ID = mug.id;
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -21,7 +29,7 @@ const Plate = ({ mug }) => {
     >
       {mug.onSale && <span className="mug-sale">On sale.</span>}
       <div className="overlay" />
-      <img src={mug.img.url} alt={mug.img.alt}  className=" rounded-xl"/>
+      <img src={ref(imagesRef,`${mug.url}`).fullPath} alt={mug.alt} className="rounded-xl" />
 
       <p className="mug-subtext">{mug.name}</p>
       <div className="flex flex-row justify-center gap-x-3 items-baseline ">

@@ -1,8 +1,6 @@
-"use client"
-import React from "react";
 
-export const Story = ({storyConfig}) => {
-  console.log(storyConfig);
+import React from "react";
+export const Story = ({storyConfig})=> {
   return (
     <section className="wow slideInUp our_story" data-wow-offset={3}>
       <div className="container" style={{ textAlign: "center" }}>

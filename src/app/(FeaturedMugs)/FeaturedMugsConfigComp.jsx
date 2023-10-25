@@ -1,16 +1,14 @@
 import React from "react";
+import { collection, getDocs, getStorage } from "firebase/firestore";
+import { database } from "@/firebase/config";
 import { FeaturedMugs } from "./FeaturedMugs";
-import { child, get, getDatabase, ref } from "firebase/database";
-import { app } from "../firebase/config";
+import { MugPlates } from "./MugPlates";
 
 export async function FeaturedMugsConfigComp() {
-  const dbRef = ref(getDatabase(app));
-  const snapshot = await get(child(dbRef, "FeaturedMugsConfig"));
-
-  if (snapshot.exists()) {
-    const data = snapshot.val();
-    return <FeaturedMugs config={data} />;
-  } else {
-    return <div>No data available</div>;
-  }
+  let data = {};
+  const querySnapshot = await getDocs(
+    collection(database, "FeaturedMugsConfig")
+  );
+    return <FeaturedMugs config={ querySnapshot.docs.map(doc => Object.assign(doc.data(), {id: doc.id}))} />;
+  
 }
