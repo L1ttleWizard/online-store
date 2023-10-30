@@ -1,16 +1,21 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import { getDatabase, ref, set } from "firebase/database";
-import { app } from "../firebase/config";
+import { doc, updateDoc } from "firebase/firestore";
+import { app } from "../../firebase/config";
 import "src/app/style.css";
-
-function writeStoryConfig(content, quote, storyLink) {
-  const db = getDatabase(app);
-  set(ref(db, "StoryConfig"), {
-    content: String(content),
-    quote: String(quote),
-    storyLink: String(storyLink),
+import { database } from "@/firebase/config";
+import { collection, getDocs } from "firebase/firestore";
+async function writeStoryConfig(content, quote, storyLink) {
+  let id ='';
+  const querySnapshot = await getDocs(collection(database, "StoryConfig"));
+  querySnapshot.forEach((doc) => {
+    id = doc.id;
+  });
+  const configRef = doc(database, "StoryConfig",id);
+  await updateDoc(configRef, {
+    content: content,
+    quote: quote,
   });
   console.log(content, quote, storyLink);
 }
@@ -23,7 +28,7 @@ export const StoryConfig = () => {
       <div>Story Config</div>
       <form className="flex flex-col gap-y-3    ">
         <input
-        className="w-fit border rounded-xl p-2"
+          className="w-fit border rounded-xl p-2"
           value={quote}
           onChange={(e) => setQuote(e.target.value)}
           placeholder="Quote"
@@ -32,7 +37,7 @@ export const StoryConfig = () => {
           required
         />
         <input
-        className="w-fit border rounded-xl p-2"
+          className="w-fit border rounded-xl p-2"
           value={content}
           onChange={(e) => setContent(e.target.value)}
           placeholder="Content"
