@@ -28,7 +28,7 @@ const Plate = ({ mug }) => {
     >
       {mug.onSale && <span className="mug-sale">On sale.</span>}
       <div className="overlay" />
-      <img src={mug.img.url} alt={mug.img.alt} className="rounded-xl" />
+      <img src={mug.url} alt={mug.alt} className="rounded-xl" />
       <p className="mug-subtext">{mug.name}</p>
       <div className="cost-wrapper">
         <span className={`cost-standard ${mug.onSale && "sale"}`}>

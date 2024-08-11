@@ -10,14 +10,14 @@ import { LifestyleConfigComp } from "./(LifestyleStories)/LifestyleStoriesConfig
 import Link from "next/link";
 export default async function Home() {
   return (
-    <div>
+    <div>     
       <AfterHeader />
       <StoryConfigComponent />
-      <FeaturedMugsConfigComp/>
+      <FeaturedMugsConfigComp />
       <MoreProductsConfigComp />
-      <Magazine />  
+      <Magazine />
       <Parallax />
-      <LifestyleConfigComp/>
+      <LifestyleConfigComp />
       <Form />
     </div>
   );

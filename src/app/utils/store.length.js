@@ -6,5 +6,5 @@ export const StoreLength = ()=>{
     return state.cart;
   });
 
-  return  Object.keys(storage).length-1 
+  return  Object.keys(storage).length
 }

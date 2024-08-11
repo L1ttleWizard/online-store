@@ -1,28 +1,30 @@
 'use client'
-import { configureStore  } from "@reduxjs/toolkit";
+import { combineReducers, configureStore  } from "@reduxjs/toolkit";
 import { cartReducer } from "./features/cart";
 import { switchReducer } from "./features/switch";
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
 import storage from "redux-persist/lib/storage";
 import { loadingReducer } from "./features/loading";
+import { userDataReducer } from "./features/userData";
 const persistConfig = {
     key: 'root',
     storage,
 }
 
-const persistedReducer = persistReducer(persistConfig,cartReducer);
 
 
-const rootReducer = {
-    cart:persistedReducer,
+const rootReducer = combineReducers({
+    cart:cartReducer,
     switch:switchReducer,
     loading:loadingReducer,
+    user:userDataReducer
     
-}
+});
+const persistedReducer = persistReducer(persistConfig,rootReducer);
 
 export const store  = configureStore({
-    reducer: rootReducer,
+    reducer: persistedReducer,
     middleware:[thunk] 
     
     

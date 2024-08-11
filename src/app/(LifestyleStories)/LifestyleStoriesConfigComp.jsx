@@ -1,17 +1,13 @@
 import React from "react";  
-import { child, get, getDatabase, ref } from "firebase/database";
-import { app } from "../firebase/config";
+import {collection, getDocs} from 'firebase/firestore';
+import { app, firestoreDatabase } from "../firebase/config";
 import { LifestyleStories } from "./LifestyleStories";
+import { getFirestoreCollection } from "../utils/getFirestoreData";
 
 
 export async function LifestyleConfigComp() {
-  const dbRef = ref(getDatabase(app));
-  const snapshot = await get(child(dbRef, "StoriesConfig"));
-
-  if (snapshot.exists()) {
-    const data = snapshot.val();
+  const data = await getFirestoreCollection('StoriesConfig');
+  if (data) {
     return <LifestyleStories config={data} />;
-  } else {
-    return <div>No data available</div>;
-  }
+  } 
 }
