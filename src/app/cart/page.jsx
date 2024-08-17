@@ -12,8 +12,11 @@ import { getDatabase, ref, onValue } from "firebase/database";
 import { useState } from "react";
 import { useLayoutEffect } from "react";
 import { app } from "../firebase/config";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+  const IS_USER = useSelector(store=>store.user.token)
   const [MoreProductsConfig, setMoreProductsConfig] = useState([]);
   useLayoutEffect(() => {
     const db = getDatabase(app);
@@ -62,7 +65,7 @@ export default function Home() {
   }, 0);
 
   const discountAmount = finalCost - rawCost;
-
+!IS_USER&& router.push('/signin')
   return (
     <>
       <h1 className="text-2xl font-bold mb-4">Cart</h1>

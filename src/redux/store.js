@@ -7,6 +7,8 @@ import thunk from 'redux-thunk';
 import storage from "redux-persist/lib/storage";
 import { loadingReducer } from "./features/loading";
 import { userDataReducer } from "./features/userData";
+import { firestoreDatabase } from "@/app/firebase/config";
+import firestoreMiddleware from "./features/firestoreMiddleware";
 const persistConfig = {
     key: 'root',
     storage,
@@ -25,7 +27,7 @@ const persistedReducer = persistReducer(persistConfig,rootReducer);
 
 export const store  = configureStore({
     reducer: persistedReducer,
-    middleware:[thunk] 
+    middleware:(getDefaultMiddleware) => getDefaultMiddleware({serializableCheck:false,}).concat(firestoreMiddleware).concat([thunk])
     
     
 });

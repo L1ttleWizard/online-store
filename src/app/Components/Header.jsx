@@ -2,13 +2,15 @@
 
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CartOverlay } from "./(Cart)/CartOverlay";
 import { useDispatch, useSelector } from "react-redux";
 import { toggle } from "@/redux/features/switch";
 import { StoreLength } from "../utils/store.length";
 
 import { launchAuth } from "../firebase/firebaseui";
+import { Button } from "@mui/material";
+import { selectSum } from "@/redux/features/cart/selector";
 const headerConfig = [
   {
     name: "home",
@@ -36,9 +38,16 @@ const headerConfig = [
   },
 ];
 export const Header = () => {
-  const userData = useSelector((state)=>state.user);
-  
 
+  const len = useSelector(state=>Object.keys(state.cart).length);
+  const [stlenState, setStlenState] = useState();
+ 
+  useEffect(() => {
+    setStlenState(len);
+  }, [len]);
+
+  const userData = useSelector((state) => state.user);
+  
   const HeaderComp = ({ name, url }) => {
     return (
       <li>
@@ -66,15 +75,27 @@ export const Header = () => {
             ))}
           </ul>
           {/* <a href="#" className="cart" onClick={()=>{dispatch(toggle())}} > */}
-          <Link href={"cart"} className="cart">
-            <img
-              src="img/cart icon.png"
-              style={{ width: 16, height: 20, marginRight: 10 }}
-              alt="cart"
-            />
-            <p>cart</p>
-            <span>{StoreLength()}</span>
-          </Link>
+          {userData.token ? (
+            <>
+              <Link href={"cart"} className="cart">
+                <img
+                  src="img/cart icon.png"
+                  style={{ width: 16, height: 20, marginRight: 10 }}
+                  alt="cart"
+                />
+                <p>cart</p>
+                <span>
+                  {stlenState}
+                </span>
+              </Link>
+            </>
+          ) : (
+            <Button variant="outlined " className="flex justify-end">
+              <Link href="/signin" className="">
+                Login
+              </Link>
+            </Button>
+          )}
           <a
             className="ml-6 block lg:hidden z-50 cursor-pointer"
             onClick={() => {
@@ -83,14 +104,19 @@ export const Header = () => {
           >
             <img src="img/nenu icon.png" className=" w-5"></img>
           </a>
-          <div id ='firebase-auth-container '></div>
-          <Link href={"#"} className=" ml-1">
-            <img
-              src={`${userData?userData.photoURL:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAzFBMVEVHcEz////////+/v77+/vx8fL9/f309fX+/v739/f////09PXOz8/5+vr8/P3////////29vf///////84qlf8wAdGiPX8/PzsUUTqQjQsqFLrSj3S3/w6g/TqPCs0gPQgpUf85+bv9P+63sL62Nb+8ef4ycbw+PJkunkeePP81HXwgGv0jhzc5/3o9efX7N5Fr19Uj/WQy562zPr2trL94KDzoJrzoJv80Gjyl5H94qgyh9v7xzihsSp+wYV1sE5ZtXBmmvUynoWKrvzKDGT6AAAAE3RSTlMAW+TTeBLcHLMt1WsKzfUznkBIxSDAuAAAAUZJREFUKJFtktligkAMRUFZxKVuDMOAggpu1apVu+/t//9TkxBU1PsySQ4hlyGadpTd0fWOrV2R3eqyWhe80j1RpYCc7pmcI2tyaZimQw6bOTMplU9hpKIofJSUmgwtTCYq9EFhqKIJ5lbGdGIRAGhUQLNX6wRLOA2Y8vdpuvfVOJtaOjhdhL56yYrjU8cGFsRSLc4/x+DPfxBiSZN6LMlXUYXzVghBT8/7pPkdxFX28yzEO8HYI8U9dlQudMZx3AeInWWe+SrExxrhCLTre3E+M3P7FXznLn887z53a2PwGbjBLLvUP2jcYUC/FYdOA9d1g22SbN1fbizT9bUxXA+QguB4G2GlfbIFqw1i0GCzKmzDDQ1LZgPQLKHk5rAJpmSj0ykH0jxArW4V79yqF1bMkEckjYvFrTWIy0btApFsx7m68Ff1D4OdMHbngtKsAAAAAElFTkSuQmCCF'}`}
-              style={{ width: 16, height: 20, marginRight: 10 }}
-              alt="cart"
-            />
-          </Link>
+          <div id="firebase-auth-container "></div>
+          {userData.name && (
+            <button className="flex rounded-lg p-0">
+              <Link href={"/signin"} className=" ml-1">
+                <img
+                  src={`${userData.name && userData.photoURL}`}
+                  style={{ width: 16, height: 20, marginRight: 10 }}
+                  alt="cart"
+                />
+              </Link>
+            </button>
+          )}
+          <div></div>{" "}
         </nav>
       </div>
     </header>

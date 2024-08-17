@@ -43,7 +43,7 @@ export const CartItem = ({ mug }) => {
             </span>
           )}
           <div className=" mt-auto">
-            {!Boolean(productAmount) && (
+            {!productAmount && (
               <button
                 className="add-cart"
                 onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}

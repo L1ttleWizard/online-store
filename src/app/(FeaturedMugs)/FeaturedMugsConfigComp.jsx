@@ -1,8 +1,8 @@
 import React from "react";
 import { FeaturedMugs } from "./FeaturedMugs";
-import { child, get, getDatabase, query, ref } from "firebase/database";
-import { app, firestoreDatabase } from "../firebase/config"
-import {collection, doc, getDoc, getDocs} from 'firebase/firestore'
+import { query } from "firebase/database";
+import { firestoreDatabase } from "../firebase/config"
+import {collection, getDocs} from 'firebase/firestore'
 
 export async function FeaturedMugsConfigComp() {
   const featuredMugsQ = query(collection(firestoreDatabase,'FeaturedMugsConfig'));

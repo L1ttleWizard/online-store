@@ -54,7 +54,7 @@ const filteredArray = allProducts.filter((obj) =>
           explore mug
         </a>
         <div>
-          {!Boolean(productAmount) && (
+          {!productAmount && (
             <button onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}>
               Add item to cart
             </button>

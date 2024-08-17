@@ -1,6 +1,7 @@
 import React from "react";
 import { MugPlates } from "./MugPlates";
 
+// eslint-disable-next-line react/prop-types
 export const FeaturedMugs = ({config}) => {
   return (
     <section id="products" className="feature-mugs">

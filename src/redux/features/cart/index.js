@@ -1,9 +1,8 @@
-"use client"
+
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState =  {
-  // Your initial state here
+  
 };
 
 export const cartSlice = createSlice({
@@ -32,8 +31,21 @@ export const cartSlice = createSlice({
     resetThis: (state, { payload }) => {
       delete state[payload];
     },
+    updateStore: (state, { payload }) => {
+      // Clear the existing state
+      Object.keys(state).forEach(key => {
+        delete state[key];
+      });
+      // Populate the state with new data
+      Object.assign(state, payload);
+    }
   },
 });
 export const cartReducer = cartSlice.reducer;
 export const cartActions = cartSlice.actions;
+export const {reset} = cartSlice.actions;
+export const {updateStore} = cartSlice.actions;
+export const selectSum = (state)=>{
+  return state.cart.length
+}
 

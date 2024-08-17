@@ -27,7 +27,7 @@ export const StoreRenderer = (prop) => {
         <p>{prop.description}</p>
         {prop.isSale && <div>Sale!</div>}
         <div>
-          {!Boolean(productAmount) && (
+          {!productAmount && (
             <button onClick={() => dispatch(cartActions.increment(PRODUCT_ID))}>
               Add item to cart
             </button>

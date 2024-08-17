@@ -7,7 +7,10 @@ import { StoreLength } from "@/app/utils/store.length";
 import { CartPlate } from "./CartPlate";
 
 export const CartOverlay = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const storelen = useSelector(state=>Object.keys(state.cart).length);
+  console.log(`storele`);
+  useEffect()
   return (
     <div className="right-container">
       <div className="sidebar-header">
@@ -20,7 +23,7 @@ export const CartOverlay = () => {
         />
       </div>
       <div className="sidebar-main">
-        {StoreLength()>0?<CartPlate />:<CartEmpty/>}
+        {storelen>0?<CartPlate />:<CartEmpty/>}
       </div>
     </div>
   );
