@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { FaXmark } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProductAmount } from "@/redux/features/cart/selector";
-import { cartActions } from "@/redux/features/cart";
+import { cartActions, updateStore } from "@/redux/features/cart";
+import { doc, getDoc } from "firebase/firestore";
+import { firestoreDatabase } from "../firebase/config";
 
 export const MugPlates = ({ featuredMugsConfig }) => {
   return featuredMugsConfig.map((mug) => {
@@ -21,6 +23,24 @@ const Plate = ({ mug }) => {
   const productAmount = useSelector((state) =>
     selectProductAmount(state, PRODUCT_ID)
   );
+
+  const token = useSelector((state) => state.user.token);
+  const handleCartUpdate = async (actoken) => {
+    if (actoken) {
+      const docRef = doc(firestoreDatabase, "usersData", `${actoken}`);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        dispatch(updateStore(docSnap.data()));
+        console.log("store updated successfully");
+      } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!", actoken);
+      }
+    }
+  };
+  useEffect(() => {
+    handleCartUpdate(token);
+  }, []);
   return (
     <div
       className={`mug--${

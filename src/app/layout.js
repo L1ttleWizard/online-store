@@ -8,8 +8,8 @@ import { PersistGate } from "redux-persist/lib/integration/react";
 import { persistor } from "@/redux/store";
 import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
-import { Suspense } from "react";
-import { useSelector } from "react-redux";
+import { Suspense, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
